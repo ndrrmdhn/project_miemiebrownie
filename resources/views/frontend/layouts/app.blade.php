@@ -67,22 +67,14 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-7">
                         <div class="header__top__left">
-                            <p>Free shipping, 30-day return or refund guarantee.</p>
+                            <p>Oleh Oleh Tegal ? Ya Miemie Brownie.</p>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-5">
                         <div class="header__top__right">
                             <div class="header__top__links">
                                 <a href="#">Sign in</a>
-                                <a href="#">FAQs</a>
-                            </div>
-                            <div class="header__top__hover">
-                                <span>Usd <i class="arrow_carrot-down"></i></span>
-                                <ul>
-                                    <li>USD</li>
-                                    <li>EUR</li>
-                                    <li>USD</li>
-                                </ul>
+                                <a href="#">Login</a>
                             </div>
                         </div>
                     </div>
@@ -100,18 +92,18 @@
                     <nav class="header__menu mobile-menu">
                         <ul>
                             <li class="active"><a href="./index.html">Home</a></li>
-                            <li><a href="./shop.html">Shop</a></li>
-                            <li><a href="#">Pages</a>
+                            <li><a href="#">Produk</a> 
+                            <li><a href="#">Tentang Kami</a>
                                 <ul class="dropdown">
-                                    <li><a href="./about.html">About Us</a></li>
-                                    <li><a href="./shop-details.html">Shop Details</a></li>
-                                    <li><a href="./shopping-cart.html">Shopping Cart</a></li>
-                                    <li><a href="./checkout.html">Check Out</a></li>
-                                    <li><a href="./blog-details.html">Blog Details</a></li>
+                                    <li><a href="./checkout.html">Blog</a></li>
+                                    <li><a href="./about.html">Sejarah</a></li>
+                                    <li><a href="./shop-details.html">Visi & Misi</a></li>
                                 </ul>
                             </li>
-                            <li><a href="./blog.html">Blog</a></li>
-                            <li><a href="./contact.html">Contacts</a></li>
+                            <li><a href="#">Info Kemitraan</a>
+                                <ul class="dropdown">
+                                    <li><a href="./checkout.html">Agen</a></li>
+                                    <li><a href="./about.html">Reseller</a></li>
                         </ul>
                     </nav>
                 </div>
