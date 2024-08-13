@@ -34,7 +34,6 @@
                                     @endif
                                 </td>
                                 <td> {{ $row->email }} </td>
-                                <td> {{ $row->hp }} </td>
                                 <td align="center">
                                     <a href="{{ route('user.edit', $row->id) }}" title="Ubah Data">
                                         <span class="btn btn-primary btn-xs waves-effect waves-light"><i
