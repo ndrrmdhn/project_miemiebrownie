@@ -30,15 +30,7 @@
               <a href="{{ route('produk.index') }}">Produk</a>
 	          </li>
             <li>
-              <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Menu</a>
-              <ul class="collapse list-unstyled" id="pageSubmenu">
-                <li>
-                    <a href="{{ route('kategori.index') }}">Kategori</a>
-                </li>
-                <li>
-                    <a href="{{ route('subkategori.index') }}">SubKategori</a>
-                </li>
-              </ul>
+              <a href="{{ route('kategori.index') }}">Kategori</a>
 	          </li>
             <li>
               <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Data Pesanan</a>
@@ -107,5 +99,212 @@
     <script src="{{ asset('backend/js/popper.js')}}"></script>
     <script src="{{ asset('backend/js/bootstrap.min.js')}}"></script>
     <script src="{{ asset('backend/js/main.js')}}"></script>
+
+    <script>
+      /****************************************
+       *       Basic Table                   *
+       ****************************************/
+      $('#zero_config').DataTable();
+  </script>
+  <!-- tambahan -->
+  <!-- sweetalert -->
+  <script src="{{ asset('sweetalert/sweetalert2.all.min.js') }}"></script>
+
+  <!-- sweetalert success-->
+  @if (session('success'))
+      <script>
+          Swal.fire({
+              icon: 'success',
+              title: 'Berhasil!',
+              text: "{{ session('success') }}"
+          });
+      </script>
+  @endif
+
+  <!-- ckeditor  -->
+  <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+  <!-- <script src="https://cdn.ckeditor.com/ckeditor5/30.0.0/classic/ckeditor.js"></script> -->
+  <script>
+      ClassicEditor
+          .create(document.querySelector('#ckeditor'))
+          .catch(error => {
+              console.error(error);
+          });
+  </script>
+
+  <script type="text/javascript">
+      //sweetalert delete
+      $('.show_confirm').click(function(event) {
+          var form = $(this).closest("form");
+          var konfdelete = $(this).data("konf-delete");
+          event.preventDefault();
+          Swal.fire({
+              title: 'Konfirmasi Hapus Data?',
+              html: "Data yang dihapus <strong>" + konfdelete + "</strong> tidak dapat dikembalikan!",
+              icon: 'warning',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              confirmButtonText: 'Ya, dihapus',
+              cancelButtonText: 'Batal'
+          }).then((result) => {
+              if (result.isConfirmed) {
+                  Swal.fire('Terhapus!', 'Data berhasil dihapus.', 'success')
+                      .then(() => {
+                          form.submit();
+                      });
+              }
+          });
+      });
+  </script>
+
+
+
+  <script type="text/javascript">
+      //sweetalert delete
+      $('.logout_confirm').click(function(event) {
+          var form = $(this).closest("form");
+          var konfdelete = $(this).data("konf-delete");
+          event.preventDefault();
+          Swal.fire({
+              title: 'Apakah Anda ingin Log Out?',
+              icon: 'warning',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              confirmButtonText: 'Ya, Log Out',
+              cancelButtonText: 'Batal'
+          }).then((result) => {
+              if (result.isConfirmed) {
+                  Swal.fire('Log Out Berhasil!', 'success')
+                      .then(() => {
+                          form.submit();
+                      });
+              }
+          });
+      });
+  </script>
+
+  <script>
+      //hanya angka
+      function hanyaAngka(evt) {
+          var charCode = (evt.which) ? evt.which : event.keyCode
+          if (charCode > 31 && (charCode < 48 || charCode > 57))
+              return false;
+          return true;
+      }
+
+      // previewImage
+      function previewFoto() {
+          const foto = document.querySelector('input[name="foto"]');
+          const fotoPreview = document.querySelector('.foto-preview');
+          fotoPreview.style.display = 'block';
+          const fotoReader = new FileReader();
+          fotoReader.readAsDataURL(foto.files[0]);
+          fotoReader.onload = function(fotoEvent) {
+              fotoPreview.src = fotoEvent.target.result;
+              fotoPreview.style.width = '100%';
+          }
+      }
+
+      // previewImgBerita
+      function previewImgBerita() {
+          const imgBerita = document.querySelector('input[name="img_berita"]');
+          const imgBeritaPreview = document.querySelector('.img-berita-preview');
+          imgBeritaPreview.style.display = 'block';
+          const imgBeritaReader = new FileReader();
+          imgBeritaReader.readAsDataURL(imgBerita.files[0]);
+          imgBeritaReader.onload = function(imgBeritaEvent) {
+              imgBeritaPreview.src = imgBeritaEvent.target.result;
+              imgBeritaPreview.style.width = '100%';
+          }
+      }
+
+      // previewImgProduk
+      function previewImgProduk() {
+          const imgProduk = document.querySelector('input[name="img_produk"]');
+          const imgProdukPreview = document.querySelector('.img-produk-preview');
+          imgProdukPreview.style.display = 'block';
+          const imgProdukReader = new FileReader();
+          imgProdukReader.readAsDataURL(imgProduk.files[0]);
+          imgProdukReader.onload = function(imgProdukEvent) {
+              imgProdukPreview.src = imgProdukEvent.target.result;
+              imgProdukPreview.style.width = '100%';
+          }
+      }
+
+      //Preview Image Produk Tampilan Depan
+      function previewImgProdukDepan() {
+          const imgProdukDepan = document.querySelector('input[name="img_produk_depan"]');
+          const imgProdukDepanPreview = document.querySelector('.img-produk-depan-preview');
+          imgProdukDepanPreview.style.display = 'block';
+          const imgProdukDepanReader = new FileReader();
+          imgProdukDepanReader.readAsDataURL(imgProdukDepan.files[0]);
+          imgProdukDepanReader.onload = function(imgProdukDepanEvent) {
+              imgProdukDepanPreview.src = imgProdukDepanEvent.target.result;
+              imgProdukDepanPreview.style.width = '100%';
+          }
+      }
+
+      //Preview Image Produk Tampilan Belakang
+      function previewImgProdukBelakang() {
+          const imgProdukBelakang = document.querySelector('input[name="img_produk_belakang"]');
+          const imgProdukBelakangPreview = document.querySelector('.img-produk-belakang-preview');
+          imgProdukBelakangPreview.style.display = 'block';
+          const imgProdukBelakangReader = new FileReader();
+          imgProdukBelakangReader.readAsDataURL(imgProdukBelakang.files[0]);
+          imgProdukBelakangReader.onload = function(imgProdukBelakangEvent) {
+              imgProdukBelakangPreview.src = imgProdukBelakangEvent.target.result;
+              imgProdukBelakangPreview.style.width = '100%';
+          }
+      }
+
+      //Preview Image Produk Tampilan Kanan
+      function previewImgProdukKanan() {
+          const imgProdukKanan = document.querySelector('input[name="img_produk_kanan"]');
+          const imgProdukKananPreview = document.querySelector('.img-produk-kanan-preview');
+          imgProdukKananPreview.style.display = 'block';
+          const imgProdukKananReader = new FileReader();
+          imgProdukKananReader.readAsDataURL(imgProdukKanan.files[0]);
+          imgProdukKananReader.onload = function(imgProdukKananEvent) {
+              imgProdukKananPreview.src = imgProdukKananEvent.target.result;
+              imgProdukKananPreview.style.width = '100%';
+          }
+      }
+
+      //Preview Image Produk Tampilan Kiri
+      function previewImgProdukKiri() {
+          const imgProdukKiri = document.querySelector('input[name="img_produk_kiri"]');
+          const imgProdukKiriPreview = document.querySelector('.img-produk-kiri-preview');
+          imgProdukKiriPreview.style.display = 'block';
+          const imgProdukKiriReader = new FileReader();
+          imgProdukKiriReader.readAsDataURL(imgProdukKiri.files[0]);
+          imgProdukKiriReader.onload = function(imgProdukKiriEvent) {
+              imgProdukKiriPreview.src = imgProdukKiriEvent.target.result;
+              imgProdukKiriPreview.style.width = '100%';
+          }
+      }
+
+      $(document).ready(function() {
+          $('.btn-number').click(function(e) {
+              e.preventDefault();
+
+              var fieldName = $(this).attr('data-field');
+              var type = $(this).attr('data-type');
+              var input = $("input[name='" + fieldName + "']");
+              var currentVal = parseInt(input.val());
+
+              if (!isNaN(currentVal)) {
+                  if (type == 'minus') {
+                      input.val(currentVal - 1);
+                  } else if (type == 'plus') {
+                      input.val(currentVal + 1);
+                  }
+              } else {
+                  input.val(1);
+              }
+          });
+      });
+  </script>
   </body>
 </html>

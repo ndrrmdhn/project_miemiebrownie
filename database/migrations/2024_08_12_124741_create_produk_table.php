@@ -22,11 +22,9 @@ return new class extends Migration
         $table->string('img_produk_kanan')->nullable();
         $table->string('img_produk_kiri')->nullable();
         $table->unsignedBigInteger('kategori_id');
-        $table->unsignedBigInteger('subkategori_id');
         $table->unsignedBigInteger('user_id');
         $table->timestamps();
         $table->foreign('kategori_id')->references('id')->on('kategori')->onDelete('cascade');
-        $table->foreign('subkategori_id')->references('id')->on('subkategori')->onDelete('cascade');
         $table->foreign('user_id')->references('id')->on('user')->onDelete('cascade');
     });
 }

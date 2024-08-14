@@ -12,72 +12,68 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // Buat pengguna
-        User::create([
-            'nama' => 'Administrator',
-            'email' => 'admin@gmail.com',
-            'is_admin' => 1,
-            'password' => bcrypt('P@55word'),
-        ]);
-        User::create([
-            'nama' => 'Rama Sahid',
-            'email' => 'ramasahid@gmail.com',
-            'is_admin' => 1,
-            'password' => bcrypt('P@55word'),
-        ]);
-        User::create([
-            'nama' => 'Team Miemie Brownie',
-            'email' => 'teammiemie-brownie@gmail.com',
-            'is_admin' => 0,
-            'password' => bcrypt('P@55word'),
-        ]);
-
+        User::updateOrCreate(
+            ['email' => 'admin@gmail.com'],
+            [
+                'nama' => 'Administrator',
+                'is_admin' => 1,
+                'password' => bcrypt('P@55word'),
+            ]
+        );
+        
+        User::updateOrCreate(
+            ['email' => 'ramasahid@gmail.com'],
+            [
+                'nama' => 'Rama Sahid',
+                'is_admin' => 1,
+                'password' => bcrypt('P@55word'),
+            ]
+        );
+        
+        User::updateOrCreate(
+            ['email' => 'teammiemie-brownie@gmail.com'],
+            [
+                'nama' => 'Team Miemie Brownie',
+                'is_admin' => 0,
+                'password' => bcrypt('P@55word'),
+            ]
+        );
+        
         // Buat kategori
-        $kategoriMakanan = Kategori::create([
-            'nama_kategori' => 'Makanan',
+        Kategori::create([
+            'nama_kategori' => 'Bolen Pisang',
         ]);
 
-        $kategoriMinuman = Kategori::create([
-            'nama_kategori' => 'Minuman',
+        Kategori::create([
+            'nama_kategori' => 'Brownies Box',
         ]);
 
-        // Buat subkategori untuk kategori Makanan
-        Subkategori::create([
-            'nama_subkategori' => 'Bolen Pisang',
-            'kategori_id' => $kategoriMakanan->id,
-        ]);
-        Subkategori::create([
-            'nama_subkategori' => 'Brownies',
-            'kategori_id' => $kategoriMakanan->id,
-        ]);
-        Subkategori::create([
-            'nama_subkategori' => 'Cookies',
-            'kategori_id' => $kategoriMakanan->id,
-        ]);
-        Subkategori::create([
-            'nama_subkategori' => 'Desert',
-            'kategori_id' => $kategoriMakanan->id,
-        ]);
-        Subkategori::create([
-            'nama_subkategori' => 'Birthday Cake',
-            'kategori_id' => $kategoriMakanan->id,
+        Kategori::create([
+            'nama_kategori' => 'Cofee',
         ]);
 
-        // Buat subkategori untuk kategori Minuman
-        Subkategori::create([
-            'nama_subkategori' => 'Cofee',
-            'kategori_id' => $kategoriMinuman->id,
+        Kategori::create([
+            'nama_kategori' => 'Fresh Drink',
         ]);
-        Subkategori::create([
-            'nama_subkategori' => 'Fresh Drink',
-            'kategori_id' => $kategoriMinuman->id,
+
+        Kategori::create([
+            'nama_kategori' => 'Cookies',
         ]);
-        Subkategori::create([
-            'nama_subkategori' => 'Meals',
-            'kategori_id' => $kategoriMakanan->id,
+
+        Kategori::create([
+            'nama_kategori' => 'Dessert Box',
         ]);
-        Subkategori::create([
-            'nama_subkategori' => 'Souvenir',
-            'kategori_id' => $kategoriMakanan->id,
+
+        Kategori::create([
+            'nama_kategori' => 'Souvenir',
+        ]);
+
+        Kategori::create([
+            'nama_kategori' => 'Birthday Cake',
+        ]);
+
+        Kategori::create([
+            'nama_kategori' => 'Meals',
         ]);
     }
 }

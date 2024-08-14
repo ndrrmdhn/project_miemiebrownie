@@ -46,7 +46,6 @@ class UserBackend extends Controller
             'nama' => 'required|max:255',
             'email' => 'required|email|unique:user',
             'is_admin' => 'required',
-            'hp' => 'required|min:10|max:13',
             'password' => 'required|min:4|confirmed',
             'img_berita' => 'image|mimes:jpeg,jpg,png,gif|file|max:1024',
         ], $messages = [
@@ -130,7 +129,6 @@ class UserBackend extends Controller
         $rules = [
             'nama' => 'required|max:255',
             'is_admin' => 'required',
-            'hp' => 'required|min:10|max:13',
             'foto' => 'image|mimes:jpeg,jpg,png,gif|file|max:1024',
         ];
         $messages = [
