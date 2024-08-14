@@ -23,30 +23,27 @@ use App\Http\Controllers\Frontend\HomeFrontend;
 |
 */
 
-//Frontend 
-Route::get('/', [HomeFrontend::class, 'index']);
-
-
-//Login
+// Rute Login
 Route::get('/login', [LoginBackend::class, 'index'])->name('login');
 Route::post('/login', [LoginBackend::class, 'authenticate'])->name('login');
 Route::post('/logout', [LoginBackend::class, 'logout'])->name('logout');
 
-// middleware auth
+// Rute Backend dengan middleware auth dan is_admin
 Route::middleware(['auth'])->group(function () {
-  Route::get('backend/home', [HomeBackend::class, 'index'])->name('home');
-  Route::resource('backend/customer', CustomerBackend::class);
-  Route::resource('backend/kategori', KategoriBackend::class);
-  Route::resource('backend/produk', ProdukBackend::class);
-  Route::resource('backend/pesanan', PesananBackend::class);
+    Route::get('backend/home', [HomeBackend::class, 'index'])->name('home');
+    Route::resource('backend/customer', CustomerBackend::class);
+    Route::resource('backend/kategori', KategoriBackend::class);
+    Route::resource('backend/produk', ProdukBackend::class);
+    Route::resource('backend/pesanan', PesananBackend::class);
 });
 
 Route::middleware(['auth', IsAdmin::class])->group(function () {
-  Route::post('backend/getIdProduk', [PesananBackend::class, 'getIdProduk'])->name('backend/getIdProduk');
-  Route::resource('backend/user', UserBackend::class);
+    Route::post('backend/getIdProduk', [PesananBackend::class, 'getIdProduk'])->name('backend/getIdProduk');
+    Route::resource('backend/user', UserBackend::class);
 });
 
-
+// Rute untuk Frontend
+Route::get('/', [HomeFrontend::class, 'index']);
 
 
 
