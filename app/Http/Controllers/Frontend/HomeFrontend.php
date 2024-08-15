@@ -10,9 +10,6 @@ class HomeFrontend extends Controller
 {
     public function index()
     {
-        return view('frontend.home.index', [
-            'judul' => 'Beranda',
-            'sub' => 'Data Beranda',
-        ]);
+        return view('frontend.home.index');
     }
 }

@@ -10,7 +10,7 @@ use App\Http\Controllers\Backend\ProdukBackend;
 use App\Http\Controllers\Backend\PesananBackend;
 use App\Http\Middleware\IsAdmin;
 use App\Http\Controllers\Frontend\HomeFrontend;
-
+use App\Http\Controllers\Frontend\ProdukFrontend;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,7 +43,8 @@ Route::middleware(['auth', IsAdmin::class])->group(function () {
 });
 
 // Rute untuk Frontend
-Route::get('/', [HomeFrontend::class, 'index']);
-
-
-
+Route::get('/', function () {
+    return view('frontend.home.index');
+});
+// Route::resource('/produk', ProdukFrontend::class);
+Route::get('/produk', [ProdukFrontend::class, 'produk']);
