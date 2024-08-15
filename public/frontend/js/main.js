@@ -31,6 +31,18 @@
         }
     });
 
+    document.addEventListener('DOMContentLoaded', function() {
+        const currentLocation = location.pathname;
+        const menuItems = document.querySelectorAll('#nav-menu a');
+        
+        menuItems.forEach(item => {
+            if(item.getAttribute('href') === currentLocation) {
+                item.classList.add('active');
+            }
+        });
+    });
+    
+
     /*------------------
         Background Set
     --------------------*/

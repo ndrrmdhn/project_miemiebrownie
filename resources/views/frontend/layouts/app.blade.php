@@ -42,28 +42,26 @@
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <nav class="header__menu mobile-menu">
-                        <ul>
-                            <li class="active"><a href="/">Home</a></li>
-                            <li><a href="produk">Produk</a></li>
+                        <ul id="nav-menu">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/produk">Produk</a></li>
                             <li><a href="#">Tentang Kami</a>
                                 <ul class="dropdown">
-                                    <!-- <li><a href="./blog.html">Blog</a></li> -->
-                                    <li><a href="#">Blog</a></li>
-                                    <li><a href="#">Sejarah</a></li>
-                                    <li><a href="#">Visi & Misi</a></li>
-                                    <!-- <li><a href="./blog-details.html">Blog Details</a></li> -->
+                                    <li><a href="/blog">Blog</a></li>
+                                    <li><a href="/sejarah">Sejarah</a></li>
+                                    <li><a href="/visi-misi">Visi & Misi</a></li>
                                 </ul>
                             </li>
                             <li><a href="#">Info Kemitraan</a>
                                 <ul class="dropdown">
-                                    <li><a href="#">Agen</a></li>
-                                    <li><a href="#">Reseller</a></li>
+                                    <li><a href="/agen">Agen</a></li>
+                                    <li><a href="/reseller">Reseller</a></li>
                                 </ul>
-                            {{-- <li><a href="./about.html">Tentang Kami</a></li> --}}
-                            {{-- <li><a href="./contact.html">Contact</a></li> --}}
+                            </li>
                         </ul>
                     </nav>
                 </div>
+                
                 <div class="col-lg-3 col-md-3">
                     <div class="header__nav__option">
                         <a href="#" class="search-switch"><img src="{{ asset('frontend/img/icon/search.png')}}" alt=""></a>

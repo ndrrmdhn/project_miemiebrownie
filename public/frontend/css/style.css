@@ -416,6 +416,11 @@ ol {
 	padding: 26px 0 25px;
 }
 
+.header__menu .active {
+	color: #ff0000; /* Ganti dengan warna yang Anda inginkan */
+	font-weight: bold;
+}
+
 .header__menu ul li {
 	list-style: none;
 	display: inline-block;
