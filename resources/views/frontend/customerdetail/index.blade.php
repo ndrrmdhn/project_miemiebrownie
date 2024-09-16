@@ -62,30 +62,23 @@
                     <p>Aktivitas pesanan kamu ada di sini</p>
                 </div>
                 <div class="order-list">
-                    <!-- Order Item -->
-                    <div class="order-item">
-                        <div class="order-item__header">
-                            <h4>Pesanan #12345</h4>
-                            <span class="order-status completed">Selesai</span>
-                        </div>
-                        <div class="order-item__details">
-                            <p><span class="detail-label">Tanggal:</span> 05 Aug 2024</p>
-                            <p><span class="detail-label">Total:</span> Rp 150,000</p>
-                            <a href="#" class="btn btn-primary">Selengkapnya</a>
-                        </div>
-                    </div>
-                    <!-- Order Item -->
-                    <div class="order-item">
-                        <div class="order-item__header">
-                            <h4>Pesanan #12346</h4>
-                            <span class="order-status pending">Diproses</span>
-                        </div>
-                        <div class="order-item__details">
-                            <p><span class="detail-label">Tanggal:</span> 15 Aug 2024</p>
-                            <p><span class="detail-label">Total:</span> Rp 200,000</p>
-                            <a href="#" class="btn btn-primary">Selengkapnya</a>
-                        </div>
-                    </div>
+                    @if($riwayatTransaksi->isEmpty())
+                        <p>Tidak ada transaksi ditemukan.</p>
+                    @else
+                        @foreach($riwayatTransaksi as $pesanan)
+                            <div class="order-item">
+                                <div class="order-item__header">
+                                    <h4>Pesanan #{{ $pesanan->no_pesanan }}</h4>
+                                    <span class="order-status {{ $pesanan->status_pesanan }}">{{ ucfirst($pesanan->status_pesanan) }}</span>
+                                </div>
+                                <div class="order-item__details">
+                                    <p><span class="detail-label">Tanggal:</span> {{ \Carbon\Carbon::parse($pesanan->tanggal)->format('d M Y H:i') }}</p>
+                                    <p><span class="detail-label">Total:</span> Rp {{ number_format($pesanan->total, 0, ',', '.') }}</p>
+                                    <a href="#" class="btn btn-primary">Selengkapnya</a>
+                                </div>
+                            </div>
+                        @endforeach
+                    @endif
                 </div>
             </div>
         </div>

@@ -30,6 +30,19 @@ class Pesanan extends Model
     {
         return $this->hasMany(PesananItem::class, 'pesanan_id');
     }
+
+    public function selesai()
+{
+    $pesananSelesai = Pesanan::where('status_pesanan', 'selesai')->get();
+    return view('backend.pesanan.selesai', compact('pesananSelesai'));
+}
+
+public function batal()
+{
+    $pesananBatal = Pesanan::where('status_pesanan', 'batal')->get();
+    return view('backend.pesanan.batal', compact('pesananBatal'));
+}
+
 }
 
 

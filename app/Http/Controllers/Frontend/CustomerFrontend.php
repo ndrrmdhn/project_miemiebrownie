@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Backend\Customer;
+use App\Models\Backend\Pesanan; // Import model Pesanan
 use App\Http\Controllers\Controller;
 
 class CustomerFrontend extends Controller
@@ -13,7 +13,14 @@ class CustomerFrontend extends Controller
     public function index()
     {
         $customer = Auth::guard('customer')->user();
-        return view('frontend.customerdetail.index', compact('customer'));
+        
+        // Ambil riwayat transaksi dari pesanan milik customer ini
+        $riwayatTransaksi = Pesanan::where('user_id', $customer->id)
+            ->with('items.produk') // Ambil produk yang ada di setiap pesanan item
+            ->orderBy('tanggal', 'desc')
+            ->get();
+
+        return view('frontend.customerdetail.index', compact('customer', 'riwayatTransaksi'));
     }
 
     // Fungsi untuk menampilkan halaman edit profil

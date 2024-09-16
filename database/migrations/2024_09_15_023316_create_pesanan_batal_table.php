@@ -11,16 +11,18 @@ return new class extends Migration
      */
     public function up()
 {
-    Schema::create('pesanan_batal', function (Blueprint $table) {
-        $table->id();
-        $table->string('no_pesanan');
-        $table->string('nama_customer');
-        $table->text('alamat');
-        $table->decimal('total', 15, 2);
-        $table->timestamp('tanggal');
-        $table->foreignId('user_id')->constrained('user')->onDelete('cascade');
-        $table->timestamps();
-    });
+// Migration for pesanan_batal
+Schema::create('pesanan_batal', function (Blueprint $table) {
+    $table->id();
+    $table->string('no_pesanan')->unique();
+    $table->string('nama_customer');
+    $table->text('alamat');
+    $table->decimal('total', 10, 2);
+    $table->timestamp('tanggal');
+    $table->unsignedBigInteger('user_id');
+    $table->timestamps();
+});
+
 }
 
 public function down()
