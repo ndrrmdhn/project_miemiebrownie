@@ -5,18 +5,18 @@
 
 <!-- Welcome Section Begin -->
 <div class="welcome-section" style="background-size: cover; background-position: center; background-repeat: no-repeat;">
-    <div class="container py-5 bg-white rounded shadow-lg" style="background: rgba(255, 255, 255, 0.95); max-width: 75%; margin: auto; margin-bottom: 20px; margin-top: 20px">
+    <div class="container-fluid py-4 bg-white rounded shadow" style="background: rgba(255, 255, 255, 0.95); max-width: 90%; margin: auto; margin-bottom: 20px; margin-top: 20px;">
         <section class="about">
-            <div class="row mb-5">
-                <div class="col-lg-12 text-center mb-4 animate__animated animate__fadeInUp">
-                    <h2 class="text-pink display-4 font-weight-bold">Selamat Datang</h2>
-                    <p class="lead text-muted">Mitra Miemie Brownie di Seluruh Indonesia</p>
-                    <div class="underline bg-pink mx-auto mt-3"></div>
+            <div class="row mb-4">
+                <div class="col-lg-12 text-center mb-3 animate__animated animate__fadeInUp">
+                    <h2 class="text-pink font-weight-bold">Selamat Datang</h2>
+                    <p class="lead text-muted mb-2">Mitra Miemie Brownie di Seluruh Indonesia</p>
+                    <div class="underline bg-pink mx-auto"></div>
                 </div>
                 <div class="container">
                     <div class="row justify-content-center">
-                        <div class="col-lg-10 text-center mb-4 animate__animated animate__fadeInUp">
-                            <p class="lead text-dark" style="line-height: 1.8; text-align: center;">
+                        <div class="col-lg-10 col-md-12 text-center mb-3 animate__animated animate__fadeInUp">
+                            <p class="lead text-dark" style="line-height: 1.6;">
                                 Ingin bekerja dari rumah tapi tetap meraih penghasilan jutaan rupiah? <br>
                                 Penasaran bagaimana caranya mendapatkan emas murni gratis? <br>
                                 Siap memperluas jaringan dan menambah banyak relasi baru? <br>
@@ -61,7 +61,7 @@
 <!-- Description Section End -->
 
 <!-- Tentang Mitra Section -->
-<div class="container mt-5 py-5 bg-white rounded shadow-lg">
+<div class="container mt-5 py-5 bg-white rounded shadow-sm">
     <div class="row align-items-center mb-5">
         <div class="col-lg-6 text-center">
             <img src="{{ asset('frontend/img/mitra/history.jpg') }}" alt="Mitra Miemie Brownie" class="img-fluid rounded shadow-lg mb-4">
@@ -253,7 +253,7 @@
         <div class="row">
             <div class="col-12 text-center">
                 <p class="lead mb-3">Klik tombol di bawah untuk bergabung. Terima kasih!</p>
-                <a href="https://chat.whatsapp.com/Fbgo3wXPLbJCkqwpyUqOHb" target="_blank" class="btn btn-custom whatsapp-btn">
+                <a href="https://chat.whatsapp.com/Fbgo3wXPLbJCkqwpyUqOHb" target="_blank" class="btn btn-green whatsapp-btn">
                     <i class="fab fa-whatsapp mr-2"></i> Gabung Grup WhatsApp
                 </a>                
             </div>

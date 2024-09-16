@@ -128,13 +128,14 @@ Helper CSS
 
 
 .set-bg {
-	background-size: cover;
+    background-size: cover;
     background-position: center;
     height: 80vh; 
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    overflow: hidden;
 }
 .overlay {
     position: absolute;
@@ -560,7 +561,7 @@ Helper CSS
 	width: 100%;
     height: 100vh; 
     background-size: cover; 
-    background-position: top center; 
+    background-position: center center; 
     background-repeat: no-repeat; 
     position: relative;
 } 
@@ -1173,12 +1174,18 @@ Helper CSS
     }
 
     .product__item__text {
-        padding: 8px 12px;
+        padding: 9px;
     }
 
     .product__item__text h6 {
-        margin-bottom: 2px; 
+        margin-bottom: 1.5px; 
+		font-size: 10px;
     }
+
+	.product__item__text h5 {
+		font-size: 12px;
+	}
+
     .product-page-cart {
 		font-size: 10px;
 		padding: 5px 10px;
@@ -2206,63 +2213,110 @@ h1 {
 }
 
 
-.testimonial {
-	background: #f3f2ee;
+.profile-card {
+    background: #f3f2ee;
+    padding: 50px 0;
 }
 
-.testimonial__text {
-	text-align: center;
-	padding: 130px 150px 175px;
+.profile-card__text {
+    background-color: #f9f9f9;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    text-align: center;
 }
 
-.testimonial__text span {
-	color: #FF4DA3;
-	font-size: 72px;
+.profile-card__text span {
+    font-size: 50px;
+    color: #333;
 }
 
-.testimonial__text p {
-	color: #111111;
-	font-size: 20px;
-	font-style: italic;
-	line-height: 30px;
-	padding-top: 12px;
-	margin-bottom: 25px;
+.profile-card__text p {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-top: 20px;
+    color: #111;
 }
 
-.testimonial__author {
-	display: inline-block;
+.profile-card__author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
 }
 
-.testimonial__author__pic {
-	float: left;
-	margin-right: 20px;
+.profile-card__author__pic {
+    flex-shrink: 0;
 }
 
-.testimonial__author__pic img {
-	height: 60px;
-	width: 60px;
-	border-radius: 50%;
+.profile-card__author__pic img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
 }
 
-.testimonial__author__text {
-	overflow: hidden;
-	padding-top: 3px;
+.profile-card__author__text {
+    margin-left: 15px;
+    text-align: left;
 }
 
-.testimonial__author__text h5 {
-	color: #111111;
-	font-weight: 700;
-	margin-bottom: 5px;
+.profile-card__author__text h5 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    color: #111;
 }
 
-.testimonial__author__text p {
-	color: #b7b7b7;
-	margin-bottom: 0 !important;
-	padding-top: 0;
+.profile-card__author__text p {
+    font-size: 16px;
+    color: #666;
+    margin: 0;
 }
 
-.testimonial__pic {
-	height: 600px;
+/* Responsiveness for smaller screens */
+@media (max-width: 768px) {
+    .profile-card__text {
+        padding: 20px;
+    }
+
+    .profile-card__text span {
+        font-size: 40px;
+    }
+
+    .profile-card__text p {
+        font-size: 18px;
+    }
+
+    .profile-card__author__text h5 {
+        font-size: 20px;
+    }
+
+    .profile-card__author__text p {
+        font-size: 14px;
+    }
+
+    .profile-card__author__pic img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 576px) {
+    .profile-card__author {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-card__author__text {
+        margin-left: 0;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .profile-card__author__pic img {
+        width: 70px;
+        height: 70px;
+    }
 }
 
 /*---------------------
@@ -4786,6 +4840,34 @@ h1 {
         font-size: 0.9rem;
         margin-bottom: 10px;
     }
+
+
+	.product__item {
+        margin-bottom: 30px; 
+		margin-top: -50px;
+    }
+    .product__item__text {
+        padding: 9px;
+    }
+    .product__item__text h6 {
+        margin-bottom: 1.5px; 
+		font-size: 8px;
+    }
+	.product__item__text h5 {
+		font-size: 10px;
+	}
+    .product-page-cart {
+		font-size: 10px;
+		padding: 5px 10px;
+		width: 100%; 
+		border-radius: 20px;
+	}
+	.filter__controls li.active {
+		color: #FF4DA3;
+		position: relative;
+		top: -50px; 
+		font-size: 35px
+	}
 }
 
 @media (max-width: 360px) {

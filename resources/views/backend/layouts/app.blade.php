@@ -4,6 +4,7 @@
     <title>Admin Miemie Brownie</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/png" href="{{ asset('backend/login/images/icons/favicon.ico')}}"/>
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ asset('backend/css/style.css') }}">
@@ -47,19 +48,15 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#kategoriSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Data Pesanan</a> 
-<ul class="collapse list-unstyled" id="kategoriSubmenu">
-    <li>
-        <a href="{{ route('pesanan.index') }}">Pesanan</a>
-    </li>
-    <li>
-        <a href="{{ route('pesanan.selesai') }}">Pesanan Selesai</a>
-    </li>
-    <li>
-        <a href="{{ route('pesanan.batal') }}">Pesanan Batal</a>
-    </li>
-</ul>
-
+                        <a href="#kategoriSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Data Pesanan</a>
+                        <ul class="collapse list-unstyled" id="kategoriSubmenu">
+                            <li>
+                                <a href="{{ route('pesanan.index') }}">Pesanan</a>
+                            </li>
+                            <li>
+                                <a href="#">Pesanan Selesai</a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
 

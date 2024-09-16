@@ -4,13 +4,13 @@
         <!-- Hero Section Begin -->
         <section class="hero">
             <div class="hero__slider owl-carousel">
-                <div class="hero__items set-bg" data-setbg="{{ asset('frontend/img/hero/1.png')}}"></div>
-                <div class="hero__items set-bg" data-setbg="{{ asset('frontend/img/hero/2.png')}}"></div>
-                <div class="hero__items set-bg" data-setbg="{{ asset('frontend/img/hero/3.png')}}"></div>
-                <div class="hero__items set-bg" data-setbg="{{ asset('frontend/img/hero/4.png')}}"></div>
-                <div class="hero__items set-bg" data-setbg="{{ asset('frontend/img/hero/5.png')}}"></div>
-                <div class="hero__items set-bg" data-setbg="{{ asset('frontend/img/hero/6.png')}}"></div>
-                <div class="hero__items set-bg" data-setbg="{{ asset('frontend/img/hero/7.png')}}"></div>
+                <div class="hero__items set-bg" data-setbg="{{ asset('frontend/img/hero/11.png')}}"></div>
+                <div class="hero__items set-bg" data-setbg="{{ asset('frontend/img/hero/22.png')}}"></div>
+                <div class="hero__items set-bg" data-setbg="{{ asset('frontend/img/hero/33.png')}}"></div>
+                <div class="hero__items set-bg" data-setbg="{{ asset('frontend/img/hero/44.png')}}"></div>
+                <div class="hero__items set-bg" data-setbg="{{ asset('frontend/img/hero/55.png')}}"></div>
+                <div class="hero__items set-bg" data-setbg="{{ asset('frontend/img/hero/66.png')}}"></div>
+                <div class="hero__items set-bg" data-setbg="{{ asset('frontend/img/hero/77.png')}}"></div>
             </div>
         </section>
         <!-- Hero Section End -->
