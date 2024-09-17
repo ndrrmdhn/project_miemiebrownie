@@ -3,11 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Miemie Brownie menawarkan berbagai oleh-oleh lezat termasuk brownies, bolen, kue ultah, cake, dessert, cookies, dan kopi di Miemie Coffee. Temukan pilihan terbaik untuk memanjakan lidah Anda!">
-    <meta name="keywords" content="Oleh Oleh, Brownies, Bolen, Kue Ultah, Cake, Dessert, Cookies, CoffeeShop, Miemie Coffee">
+    <meta name="description" content="Male_Fashion Template">
+    <meta name="keywords" content="Male_Fashion, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="{{ asset('frontend/img/image-title.jpg') }}" type="image/jpg">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Miemie Brownie | Oleh-oleh Exclusive Tegal</title>
