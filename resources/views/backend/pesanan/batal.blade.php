@@ -58,6 +58,12 @@
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus pesanan selesai ini?')">Hapus</button>
+                                    <form method="POST" action="{{ route('pesanan.destroy', $row->id) }}" style="display:inline-block;">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger btn-xs show_confirm" data-konf-delete="{{ $row->no_pesanan }}">
+                                            <i class="fa fa-trash"></i> Hapus
+                                        </button>
                                     </form>
                                 </td>
                             </tr>

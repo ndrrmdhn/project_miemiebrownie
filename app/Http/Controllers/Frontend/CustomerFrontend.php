@@ -46,6 +46,18 @@ class CustomerFrontend extends Controller
 
     return view('frontend.customerdetail.index', compact('customer', 'riwayatTransaksi'));
 }
+    {
+        $customer = Auth::guard('customer')->user();
+        
+        // Ambil riwayat transaksi dari pesanan milik customer ini
+        $riwayatTransaksi = Pesanan::where('user_id', $customer->id)
+            ->with('items.produk') // Ambil produk yang ada di setiap pesanan item
+            ->orderBy('tanggal', 'desc')
+            ->get();
+
+        return view('frontend.customerdetail.index', compact('customer', 'riwayatTransaksi'));
+    }
+>>>>>>> d01cb8fe3dc818409cd6d5235407db0c6b8f2c57
 
     // Fungsi untuk menampilkan halaman edit profil
     public function edit()

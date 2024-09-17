@@ -188,6 +188,9 @@ public function edit(string $id)
     // Ambil data dari model PesananSelesai
     $pesananSelesai = \App\Models\Backend\PesananSelesai::all();
     
+    // Ambil data dari model PesananSelesai
+    $pesananSelesai = \App\Models\Backend\PesananSelesai::all();
+    
     return view('backend.pesanan.selesai', [
         'judul' => 'Pesanan Selesai',
         'sub' => 'Data Pesanan Selesai',
@@ -197,8 +200,13 @@ public function edit(string $id)
 
 
 
+
+
 public function batal()
 {
+    // Ambil data dari model PesananBatal
+    $pesananBatal = \App\Models\Backend\PesananBatal::all();
+    
     // Ambil data dari model PesananBatal
     $pesananBatal = \App\Models\Backend\PesananBatal::all();
     

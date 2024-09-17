@@ -33,21 +33,21 @@
         </div>
         <!-- History Section End -->
 
-        <!-- Testimonial Section Begin -->
-        <section class="testimonial spad">
+        <!-- Profile Card Section Begin -->
+        <section class="profile-card spad">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
-                        <div class="testimonial__text" style="background-color: #f9f9f9; padding: 40px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1); text-align: center;">
-                            <span class="icon_quotations" style="font-size: 50px; color: #333;"></span>
-                            <p style="font-size: 20px; line-height: 1.6; margin-top: 20px;">“Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae, veniam!”</p>
-                            <div class="testimonial__author" style="display: flex; align-items: center; justify-content: center; margin-top: 30px;">
-                                <div class="testimonial__author__pic" style="flex-shrink: 0;">
-                                    <img src="{{ asset('frontend/img/about/RamaSahid.jpeg') }}" alt="Testimonial Author" style="width: 100px; height: 100px; border-radius: 50%;">
+                        <div class="profile-card__text">
+                            <span class="icon_quotations"></span>
+                            <p>“Menghadirkan kebahagiaan dalam setiap gigitan”</p>
+                            <div class="profile-card__author">
+                                <div class="profile-card__author__pic">
+                                    <img src="{{ asset('frontend/img/about/RamaSahid.jpeg') }}" alt="Profile Author">
                                 </div>
-                                <div class="testimonial__author__text" style="margin-left: 15px; text-align: left;">
-                                    <h5 style="font-size: 24px; font-weight: bold; margin: 0;">Rama Sahid</h5>
-                                    <p style="font-size: 16px; color: #666; margin: 0;">CEO PT Nibras Berkah Mulia </p>
+                                <div class="profile-card__author__text">
+                                    <h5>Rama Sahid</h5>
+                                    <p>CEO PT Nibras Berkah Mulia</p>
                                 </div>
                             </div>
                         </div>
@@ -55,9 +55,9 @@
                 </div>
             </div>
         </section>        
-        <!-- Testimonial Section End -->
+        <!-- Profile Card Section End -->
     
-         <!-- Counter Section Begin -->
+        <!-- Counter Section Begin -->
     <section class="counter spad" style="margin-top: 50px;">
         <div class="container">
             <div class="row">
@@ -105,30 +105,30 @@
                     <!-- Anggota tim diubah sesuai kebutuhan -->
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="team__item">
-                            <img src="{{ asset('frontend/img/about/team-1.jpg' )}}" alt="Tim">
-                            <h4>Fulan Bin Fulan</h4>
-                            <span>Founder</span>
+                            <img src="{{ asset('frontend/img/about/RamaSahid.jpeg') }}" alt="Tim">
+                            <h4>Nama</h4>
+                            <span>Jabatan</span>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="team__item">
-                            <img src="{{ asset('frontend/img/about/team-2.jpg' )}}" alt="Tim">
-                            <h4>Fulan Bin Fulan</h4>
-                            <span>Manager Kemitraan</span>
+                            <img src="{{ asset('frontend/img/about/RamaSahid.jpeg') }}" alt="Tim">
+                            <h4>Nama</h4>
+                            <span>Jabatan</span>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="team__item">
-                            <img src="{{ asset('frontend/img/about/team-3.jpg' )}}" alt="Tim">
-                            <h4>Fulan Bin Fulan</h4>
-                            <span>Marketing</span>
+                            <img src="{{ asset('frontend/img/about/RamaSahid.jpeg') }}" alt="Tim">
+                            <h4>Nama</h4>
+                            <span>Jabatan</span>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="team__item">
-                            <img src="{{ asset('frontend/img/about/team-4.jpg' )}}" alt="Tim">
-                            <h4>Fulan Bin Fulan</h4>
-                            <span>Customer Support</span>
+                            <img src="{{ asset('frontend/img/about/RamaSahid.jpeg') }}" alt="Tim">
+                            <h4>Nama</h4>
+                            <span>Jabatan</span>
                         </div>
                     </div>
                 </div>
@@ -155,16 +155,16 @@
                         <a href="#" class="client__item"><img src="{{ asset('frontend/img/clients/adap.jpg' )}}" alt="Partner"></a>
                     </div>
                     <div class="col-lg-2 col-md-4 col-sm-4 col-6">
-                        <a href="#" class="client__item"><img src="{{ asset('frontend/img/clients/umkm.jpeg' )}}" alt="Partner"></a>
+                        <a href="#" class="client__item"><img src="{{ asset('frontend/img/clients/coffe.jpg' )}}" alt="Partner"></a>
                     </div>
                     <div class="col-lg-2 col-md-4 col-sm-4 col-6">
                         <a href="#" class="client__item"><img src="{{ asset('frontend/img/clients/btg.jpg' )}}" alt="Partner"></a>
                     </div>
                     <div class="col-lg-2 col-md-4 col-sm-4 col-6">
-                        <a href="#" class="client__item"><img src="{{ asset('frontend/img/clients/coffe.jpg' )}}" alt="Partner"></a>
+                        <a href="#" class="client__item"><img src="{{ asset('frontend/img/clients/umkm.jpeg' )}}" alt="Partner"></a>
                     </div>
                     <div class="col-lg-2 col-md-4 col-sm-4 col-6">
-                        <a href="#" class="client__item"><img src="{{ asset('frontend/img/clients/berani.png' )}}" alt="Partner"></a>
+                        <a href="#" class="client__item"><img src="{{ asset('frontend/img/clients/nbm.jpg' )}}" alt="Partner"></a>
                     </div>
                 </div>
             </div>
