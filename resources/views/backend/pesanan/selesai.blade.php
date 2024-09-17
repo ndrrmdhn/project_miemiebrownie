@@ -50,7 +50,7 @@
             <span>Bayar di Tempat (COD)</span>
             @break
         @default
-            <span>Belum Bayar</span>
+            <span>Lunas</span>
     @endswitch
 </td>                               
                                 <td align="center">

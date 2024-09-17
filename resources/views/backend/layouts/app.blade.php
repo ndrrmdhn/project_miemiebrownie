@@ -54,7 +54,10 @@
                                 <a href="{{ route('pesanan.index') }}">Pesanan</a>
                             </li>
                             <li>
-                                <a href="#">Pesanan Selesai</a>
+                                <a href="{{ route('pesanan.selesai') }}">Pesanan Selesai</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('pesanan.batal') }}">Pesanan Batal</a>
                             </li>
                         </ul>
                     </li>

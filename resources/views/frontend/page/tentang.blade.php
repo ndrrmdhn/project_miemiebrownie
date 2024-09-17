@@ -105,30 +105,30 @@
                     <!-- Anggota tim diubah sesuai kebutuhan -->
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="team__item">
-                            <img src="{{ asset('frontend/img/about/team-1.jpg' )}}" alt="Tim">
-                            <h4>Fulan Bin Fulan</h4>
-                            <span>Founder</span>
+                            <img src="{{ asset('frontend/img/about/RamaSahid.jpeg') }}" alt="Tim">
+                            <h4>Nama</h4>
+                            <span>Jabatan</span>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="team__item">
-                            <img src="{{ asset('frontend/img/about/team-2.jpg' )}}" alt="Tim">
-                            <h4>Fulan Bin Fulan</h4>
-                            <span>Manager Kemitraan</span>
+                            <img src="{{ asset('frontend/img/about/RamaSahid.jpeg') }}" alt="Tim">
+                            <h4>Nama</h4>
+                            <span>Jabatan</span>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="team__item">
-                            <img src="{{ asset('frontend/img/about/team-3.jpg' )}}" alt="Tim">
-                            <h4>Fulan Bin Fulan</h4>
-                            <span>Marketing</span>
+                            <img src="{{ asset('frontend/img/about/RamaSahid.jpeg') }}" alt="Tim">
+                            <h4>Nama</h4>
+                            <span>Jabatan</span>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="team__item">
-                            <img src="{{ asset('frontend/img/about/team-4.jpg' )}}" alt="Tim">
-                            <h4>Fulan Bin Fulan</h4>
-                            <span>Customer Support</span>
+                            <img src="{{ asset('frontend/img/about/RamaSahid.jpeg') }}" alt="Tim">
+                            <h4>Nama</h4>
+                            <span>Jabatan</span>
                         </div>
                     </div>
                 </div>
