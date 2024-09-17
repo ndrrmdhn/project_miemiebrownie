@@ -195,10 +195,9 @@ public function edit(string $id)
     ]);
 }
 
-
-
 public function batal()
 {
+   
     // Ambil data dari model PesananBatal
     $pesananBatal = \App\Models\Backend\PesananBatal::all();
     
@@ -207,5 +206,35 @@ public function batal()
         'sub' => 'Data Pesanan Batal',
         'pesanan' => $pesananBatal
     ]);
+}
+
+public function destroySelesai($id)
+{
+    // Ambil pesanan selesai berdasarkan id
+    $pesananSelesai = DB::table('pesanan_selesai')->where('id', $id)->first(); // first() mengembalikan satu item
+
+    // Jika pesanan selesai ditemukan
+    if ($pesananSelesai) {
+        // Hapus pesanan selesai
+        DB::table('pesanan_selesai')->where('id', $id)->delete();
+        return redirect()->route('pesanan.selesai')->with('success', 'Pesanan selesai berhasil dihapus.');
+    }
+
+    return redirect()->route('pesanan.selesai')->with('error', 'Pesanan tidak ditemukan.');
+}
+
+public function destroyBatal($id)
+{
+    // Ambil pesanan batal berdasarkan id
+    $pesananBatal = DB::table('pesanan_batal')->where('id', $id)->first(); // first() mengembalikan satu item
+
+    // Jika pesanan batal ditemukan
+    if ($pesananBatal) {
+        // Hapus pesanan batal
+        DB::table('pesanan_batal')->where('id', $id)->delete();
+        return redirect()->route('pesanan.batal')->with('success', 'Pesanan batal berhasil dihapus.');
+    }
+
+    return redirect()->route('pesanan.batal')->with('error', 'Pesanan tidak ditemukan.');
 }
 }
