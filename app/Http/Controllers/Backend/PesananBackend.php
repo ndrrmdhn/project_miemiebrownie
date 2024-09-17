@@ -185,7 +185,9 @@ public function edit(string $id)
     }
     public function selesai()
 {
-    $pesananSelesai = Pesanan::onlyTrashed()->where('status_pesanan', 'selesai')->get();
+    // Ambil data dari model PesananSelesai
+    $pesananSelesai = \App\Models\Backend\PesananSelesai::all();
+    
     return view('backend.pesanan.selesai', [
         'judul' => 'Pesanan Selesai',
         'sub' => 'Data Pesanan Selesai',
@@ -193,9 +195,13 @@ public function edit(string $id)
     ]);
 }
 
+
+
 public function batal()
 {
-    $pesananBatal = Pesanan::onlyTrashed()->where('status_pesanan', 'batal')->get();
+    // Ambil data dari model PesananBatal
+    $pesananBatal = \App\Models\Backend\PesananBatal::all();
+    
     return view('backend.pesanan.batal', [
         'judul' => 'Pesanan Batal',
         'sub' => 'Data Pesanan Batal',
@@ -203,4 +209,33 @@ public function batal()
     ]);
 }
 
+public function destroySelesai($id)
+{
+    // Ambil pesanan selesai berdasarkan id
+    $pesananSelesai = DB::table('pesanan_selesai')->where('id', $id)->first(); // first() mengembalikan satu item
+
+    // Jika pesanan selesai ditemukan
+    if ($pesananSelesai) {
+        // Hapus pesanan selesai
+        DB::table('pesanan_selesai')->where('id', $id)->delete();
+        return redirect()->route('pesanan.selesai')->with('success', 'Pesanan selesai berhasil dihapus.');
+    }
+
+    return redirect()->route('pesanan.selesai')->with('error', 'Pesanan tidak ditemukan.');
+}
+
+public function destroyBatal($id)
+{
+    // Ambil pesanan batal berdasarkan id
+    $pesananBatal = DB::table('pesanan_batal')->where('id', $id)->first(); // first() mengembalikan satu item
+
+    // Jika pesanan batal ditemukan
+    if ($pesananBatal) {
+        // Hapus pesanan batal
+        DB::table('pesanan_batal')->where('id', $id)->delete();
+        return redirect()->route('pesanan.batal')->with('success', 'Pesanan batal berhasil dihapus.');
+    }
+
+    return redirect()->route('pesanan.batal')->with('error', 'Pesanan tidak ditemukan.');
+}
 }

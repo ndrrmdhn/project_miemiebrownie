@@ -40,7 +40,8 @@ class CheckoutFrontend extends Controller
     }
 
     // Memproses form checkout
-    public function process(Request $request)
+   // Memproses form checkout
+public function process(Request $request)
 {
     // Memastikan customer sudah login
     $customer = auth('customer')->user();
@@ -71,25 +72,28 @@ class CheckoutFrontend extends Controller
 
     // Simpan satu entri dalam tabel `pesanan`
     $pesanan = new Pesanan();
-$pesanan->no_pesanan = uniqid();
-$pesanan->alamat = $request->address;
-$pesanan->metode_pembayaran = $request->payment_method;
-$pesanan->nama_customer = $request->first_name . ' ' . $request->last_name;
-$pesanan->total = $total; // Total dari seluruh keranjang
-$pesanan->status_pesanan = 'pending';
-$pesanan->user_id = $customer->id;
-$pesanan->tanggal = Carbon::now();
-$pesanan->save();
+    $pesanan->no_pesanan = uniqid();
+    $pesanan->alamat = $request->address;
+    $pesanan->metode_pembayaran = $request->payment_method;
+    $pesanan->nama_customer = $request->first_name . ' ' . $request->last_name;
+    $pesanan->total = $total; // Total dari seluruh keranjang
+    $pesanan->status_pesanan = 'pending';
+    $pesanan->user_id = $customer->id;
+    $pesanan->tanggal = Carbon::now();
+    $pesanan->save();
 
-// Simpan item ke dalam pesanan_item menggunakan relasi
-foreach ($cartItems as $item) {
-    $pesanan->items()->create([
-        'produk_id' => $item->product_id,
-        'jumlah_pesanan' => $item->quantity,
-        'harga' => $item->product->harga,
-        'total_harga' => $item->product->harga * $item->quantity,
-    ]);
-}
+    // Simpan item ke dalam pesanan_item menggunakan relasi
+    foreach ($cartItems as $item) {
+        $pesanan->items()->create([
+            'produk_id' => $item->product_id,
+            'jumlah_pesanan' => $item->quantity,
+            'harga' => $item->product->harga,
+            'total_harga' => $item->product->harga * $item->quantity,
+        ]);
+    }
+
+    // Kosongkan keranjang setelah proses checkout berhasil
+    Cart::where('customer_id', $customer->id)->delete();
 
     // Format pesan untuk dikirim ke WhatsApp
     $productDetails = $cartItems->map(function ($item) {

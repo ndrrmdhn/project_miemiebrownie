@@ -52,6 +52,8 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('backend/pesanan', PesananBackend::class);
     Route::get('backend/pesanan-selesai', [PesananBackend::class, 'selesai'])->name('pesanan.selesai');
     Route::get('backend/pesanan-batal', [PesananBackend::class, 'batal'])->name('pesanan.batal');
+    Route::delete('backend/pesanan-selesai/{id}', [PesananBackend::class, 'destroySelesai'])->name('pesanan.selesai.destroy');
+    Route::delete('backend/pesanan-batal/{id}', [PesananBackend::class, 'destroyBatal'])->name('pesanan.batal.destroy');    
 });
 
 Route::middleware(['auth', IsAdmin::class])->group(function () {
