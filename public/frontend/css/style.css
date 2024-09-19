@@ -2212,110 +2212,66 @@ h1 {
 	margin-bottom: 0;
 }
 
-
+/* Profile Card Styling */
 .profile-card {
-    background: #f3f2ee;
-    padding: 50px 0;
+    background: linear-gradient(135deg, #f5f7fa 0%, #f3f2ee 100%);
+    padding: 60px 0;
 }
 
 .profile-card__text {
-    background-color: #f9f9f9;
-    padding: 40px;
+    background-color: white;
     border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    padding: 30px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.profile-card__text span {
-    font-size: 50px;
-    color: #333;
-}
-
-.profile-card__text p {
-    font-size: 20px;
-    line-height: 1.6;
-    margin-top: 20px;
-    color: #111;
+.profile-card__text:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.2);
 }
 
 .profile-card__author {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin-top: 30px;
-}
-
-.profile-card__author__pic {
-    flex-shrink: 0;
 }
 
 .profile-card__author__pic img {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
+    transition: box-shadow 0.3s ease;
+    object-fit: cover;
 }
 
-.profile-card__author__text {
-    margin-left: 15px;
-    text-align: left;
+.profile-card__author__pic img:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 .profile-card__author__text h5 {
     font-size: 24px;
-    font-weight: bold;
-    margin: 0;
-    color: #111;
+    font-weight: 600;
+    margin-top: 20px;
+    color: #333;
 }
 
 .profile-card__author__text p {
     font-size: 16px;
-    color: #666;
-    margin: 0;
+    font-weight: 400;
+    color: #777;
+    margin-top: 5px;
 }
 
-/* Responsiveness for smaller screens */
+/* Optional: Styling for better responsiveness */
 @media (max-width: 768px) {
-    .profile-card__text {
-        padding: 20px;
+    .profile-card__author__pic img {
+        width: 120px;
+        height: 120px;
     }
-
-    .profile-card__text span {
-        font-size: 40px;
-    }
-
-    .profile-card__text p {
-        font-size: 18px;
-    }
-
     .profile-card__author__text h5 {
         font-size: 20px;
-    }
-
-    .profile-card__author__text p {
-        font-size: 14px;
-    }
-
-    .profile-card__author__pic img {
-        width: 80px;
-        height: 80px;
-    }
-}
-
-@media (max-width: 576px) {
-    .profile-card__author {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .profile-card__author__text {
-        margin-left: 0;
-        text-align: center;
-        margin-top: 10px;
-    }
-
-    .profile-card__author__pic img {
-        width: 70px;
-        height: 70px;
     }
 }
 
@@ -2380,14 +2336,39 @@ h1 {
 }
 
 .team__item img {
-	min-width: 100%;
+	width: 100%;
 	margin-bottom: 25px;
-	filter: grayscale(100%); 
-    transition: filter 0.3s ease; 
+	/* filter: grayscale(100%);  */
+    /* transition: filter 0.3s ease;  */
 }
 
-.team__item img:hover {
+/* .team__item img:hover {
     filter: grayscale(0%); 
+} */
+
+.decorated-img {
+	max-width: 100%;
+	height: auto;
+	object-fit: cover;
+	margin: 0 auto;
+	display: block;
+	border-radius: 15px; 
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+	transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+.decorated-img:hover {
+	transform: scale(1.05); 
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+}
+
+@media (min-width: 992px) {
+	.team__item img {
+		max-width: 50%; 
+		max-height: 80vh; 
+		border-radius: 20px;
+		margin: 0 auto;
+		display: block;
+	}
 }
 
 .team__item h4 {
@@ -2415,13 +2396,13 @@ h1 {
     display: block;
 	margin-bottom: 75px;
 	text-align: center;
-    filter: grayscale(100%); 
-    transition: filter 0.3s ease; 
+    /* filter: grayscale(100%); 
+    transition: filter 0.3s ease;  */
 }
 
-.client__item img:hover {
+/* .client__item img:hover {
     filter: grayscale(0%); 
-}
+} */
 
 
 /*---------------------

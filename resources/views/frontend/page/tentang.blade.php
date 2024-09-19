@@ -39,22 +39,20 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="profile-card__text">
-                            <span class="icon_quotations"></span>
-                            <p>“Menghadirkan kebahagiaan dalam setiap gigitan”</p>
                             <div class="profile-card__author">
                                 <div class="profile-card__author__pic">
-                                    <img src="{{ asset('frontend/img/about/RamaSahid.jpeg') }}" alt="Profile Author">
+                                    <img src="{{ asset('frontend/img/about/miemie.jpg') }}" alt="Profile Author" class="rounded-circle">
                                 </div>
                                 <div class="profile-card__author__text">
-                                    <h5>Rama Sahid</h5>
-                                    <p>CEO PT Nibras Berkah Mulia</p>
+                                    <h5>Evitha Ramadhan</h5>
+                                    <p>Owner</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>        
+        </section>
         <!-- Profile Card Section End -->
     
         <!-- Counter Section Begin -->
@@ -102,33 +100,9 @@
                     </div>
                 </div>
                 <div class="row">
-                    <!-- Anggota tim diubah sesuai kebutuhan -->
-                    <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="col-12">
                         <div class="team__item">
-                            <img src="{{ asset('frontend/img/about/RamaSahid.jpeg') }}" alt="Tim">
-                            <h4>Nama</h4>
-                            <span>Jabatan</span>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="team__item">
-                            <img src="{{ asset('frontend/img/about/RamaSahid.jpeg') }}" alt="Tim">
-                            <h4>Nama</h4>
-                            <span>Jabatan</span>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="team__item">
-                            <img src="{{ asset('frontend/img/about/RamaSahid.jpeg') }}" alt="Tim">
-                            <h4>Nama</h4>
-                            <span>Jabatan</span>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="team__item">
-                            <img src="{{ asset('frontend/img/about/RamaSahid.jpeg') }}" alt="Tim">
-                            <h4>Nama</h4>
-                            <span>Jabatan</span>
+                            <img src="{{ asset('frontend/img/about/team.jpg') }}" alt="Tim" class="img-fluid decorated-img">
                         </div>
                     </div>
                 </div>
