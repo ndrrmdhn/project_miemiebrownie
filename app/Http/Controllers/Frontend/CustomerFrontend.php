@@ -8,44 +8,40 @@ use App\Models\Backend\Pesanan; // Import model Pesanan
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 
-
 class CustomerFrontend extends Controller
 {
     // Fungsi untuk menampilkan profil tanpa bisa diubah (index view)
     public function index()
-{
-    $customer = Auth::guard('customer')->user();
+    {
+        $customer = Auth::guard('customer')->user();
 
-    // Ambil riwayat pesanan aktif (dari tabel pesanan)
-    $riwayatPesanan = Pesanan::where('user_id', $customer->id)
-        ->with('items.produk') // Ambil produk di setiap pesanan item
-        ->orderBy('tanggal', 'desc')
-        ->get()
-        ->each(function ($pesanan) {
-            $pesanan->status_pesanan = 'pending';
-        });
+        // Ambil riwayat pesanan aktif (dari tabel pesanan) tanpa memaksa status menjadi 'pending'
+        $riwayatPesanan = Pesanan::where('user_id', $customer->id)
+            ->with('items.produk') // Ambil produk di setiap pesanan item
+            ->orderBy('tanggal', 'desc')
+            ->get();
 
-    // Ambil riwayat pesanan selesai
-    $riwayatPesananSelesai = \App\Models\Backend\PesananSelesai::where('user_id', $customer->id)
-        ->orderBy('tanggal', 'desc')
-        ->get()
-        ->each(function ($pesanan) {
-            $pesanan->status_pesanan = 'selesai';
-        });
+        // Ambil riwayat pesanan selesai
+        $riwayatPesananSelesai = \App\Models\Backend\PesananSelesai::where('user_id', $customer->id)
+            ->orderBy('tanggal', 'desc')
+            ->get()
+            ->each(function ($pesanan) {
+                $pesanan->status_pesanan = 'selesai';
+            });
 
-    // Ambil riwayat pesanan batal
-    $riwayatPesananBatal = \App\Models\Backend\PesananBatal::where('user_id', $customer->id)
-        ->orderBy('tanggal', 'desc')
-        ->get()
-        ->each(function ($pesanan) {
-            $pesanan->status_pesanan = 'batal';
-        });
+        // Ambil riwayat pesanan batal
+        $riwayatPesananBatal = \App\Models\Backend\PesananBatal::where('user_id', $customer->id)
+            ->orderBy('tanggal', 'desc')
+            ->get()
+            ->each(function ($pesanan) {
+                $pesanan->status_pesanan = 'batal';
+            });
 
-    // Gabungkan semua pesanan
-    $riwayatTransaksi = $riwayatPesanan->merge($riwayatPesananSelesai)->merge($riwayatPesananBatal);
+        // Gabungkan semua pesanan
+        $riwayatTransaksi = $riwayatPesanan->merge($riwayatPesananSelesai)->merge($riwayatPesananBatal);
 
-    return view('frontend.customerdetail.index', compact('customer', 'riwayatTransaksi'));
-}
+        return view('frontend.customerdetail.index', compact('customer', 'riwayatTransaksi'));
+    }
 
     // Fungsi untuk menampilkan halaman edit profil
     public function edit()

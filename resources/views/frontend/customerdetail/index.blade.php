@@ -61,32 +61,35 @@
                     <h2>Riwayat Transaksi</h2>
                     <p>Aktivitas pesanan kamu ada di sini</p>
                 </div>
+
                 <div class="order-list">
                     @if($riwayatTransaksi->isEmpty())
                         <p>Tidak ada transaksi ditemukan.</p>
                     @else
-                    @foreach($riwayatTransaksi as $pesanan)
-    <div class="order-item">
-        <div class="order-item__header">
-            <h4>Pesanan #{{ $pesanan->no_pesanan }}</h4>
-            <span class="order-status {{ $pesanan->status_pesanan }}">
-                {{ ucfirst($pesanan->status_pesanan) }}
-            </span>
-        </div>
-        <div class="order-item__details">
-            <p><span class="detail-label">Tanggal:</span> {{ \Carbon\Carbon::parse($pesanan->tanggal)->format('d M Y H:i') }}</p>
-            <p><span class="detail-label">Total:</span> Rp {{ number_format($pesanan->total, 0, ',', '.') }}</p>
+                        @foreach($riwayatTransaksi as $pesanan)
+                        <div class="order-item mb-4 p-3 border rounded shadow-sm">
+                            <div class="order-item__header d-flex justify-content-between align-items-center">
+                                <h4>Pesanan #{{ $pesanan->no_pesanan }}</h4>
+                                <span class="order-status badge {{ $pesanan->status_pesanan }}">
+                                    {{ ucfirst($pesanan->status_pesanan) }}
+                                </span>
+                            </div>
+                            <div class="order-item__details mt-2">
+                                <p><strong>Tanggal:</strong> {{ \Carbon\Carbon::parse($pesanan->tanggal)->format('d M Y H:i') }}</p>
+                                <p><strong>Total:</strong> Rp {{ number_format($pesanan->total, 0, ',', '.') }}</p>
 
-            @if(isset($pesanan->items)) 
-                <p><span class="detail-label">Produk:</span> 
-                    @foreach($pesanan->items as $item)
-                        {{ $item->produk->nama_produk }} ({{ $item->jumlah_pesanan }}x), 
-                    @endforeach
-                </p>
-            @endif
-        </div>
-    </div>
-@endforeach
+                                @if($pesanan->items && $pesanan->items->isNotEmpty())
+                                    <p><strong>Produk:</strong>
+                                        @foreach($pesanan->items as $item)
+                                            {{ $item->produk->nama_produk }} ({{ $item->jumlah_pesanan }}x){{ !$loop->last ? ',' : '' }}
+                                        @endforeach
+                                    </p>
+                                @else
+                                    <p><strong>Produk:</strong> Tidak ada produk ditemukan.</p>
+                                @endif
+                            </div>
+                        </div>
+                        @endforeach
                     @endif
                 </div>
             </div>

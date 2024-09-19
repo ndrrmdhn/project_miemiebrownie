@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('no_pesanan')->unique();
             $table->text('alamat');
+            $table->string('no_hp');
             $table->enum('metode_pembayaran', ['bank_transfer', 'credit_card', 'cod']);
             $table->string('nama_customer');
             $table->decimal('total', 15, 2); // Total seluruh pesanan

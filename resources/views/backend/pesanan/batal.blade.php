@@ -15,6 +15,7 @@
                             <th>Tanggal</th>
                             <th>Nama Customer</th>
                             <th>Alamat Lengkap</th>
+                            <th>No HP</th>
                             <th>Produk</th>
                             <th>Total</th>
                             <th>Metode Pembayaran</th>
@@ -32,6 +33,7 @@
                                 <td>{{ \Carbon\Carbon::parse($row->tanggal)->timezone('Asia/Jakarta')->format('d M Y H:i') }}</td>
                                 <td>{{ $row->nama_customer }}</td>
                                 <td>{{ $row->alamat }}</td>
+                                <td>{{ $row->no_hp }}</td>
                                 <td>
                                     @foreach($row->items as $item)
                                         {{ $item->produk->nama_produk }} ({{ $item->jumlah_pesanan }}){{ !$loop->last ? ',' : '' }}

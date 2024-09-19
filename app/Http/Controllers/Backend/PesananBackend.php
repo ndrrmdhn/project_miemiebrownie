@@ -50,7 +50,8 @@ class PesananBackend extends Controller
         'produk_id' => 'required|exists:produk,id', 
         'jumlah_pesanan' => 'required|integer',
         'alamat' => 'required|string',
-        'metode_pembayaran' => 'required|in:bank_transfer,credit_card,cod', // Perbaiki metode pembayaran
+        'no_hp' => 'required|string|max:15', // Hapus koma berlebih di sini
+        'metode_pembayaran' => 'required|in:bank_transfer,credit_card,cod',
         'total_pesanan' => 'required|numeric',
     ]);
 
@@ -61,7 +62,7 @@ class PesananBackend extends Controller
 
     // Menyimpan data pesanan
     $validatedData['no_pesanan'] = $no_pesanan;
-    $validatedData['status_pesanan'] = $validatedData['status_pesanan'] ?? 'pending'; // Set status sebagai 'pending' jika tidak ada status yang diberikan
+    $validatedData['status_pesanan'] = $validatedData['status_pesanan'] ?? 'pending'; 
     $validatedData['user_id'] = auth()->user()->id;
     $validatedData['tanggal'] = Carbon::now();
 
@@ -120,6 +121,7 @@ public function edit(string $id)
         'status_pesanan' => 'required|in:pending,proses,selesai,batal',
         'nama_customer' => 'required|string|max:255',
         'alamat' => 'required|string',
+        'no_hp' => 'required|string|max:15',
     ]);
 
     if ($validatedData['status_pesanan'] == 'selesai') {
@@ -129,6 +131,7 @@ public function edit(string $id)
                 'no_pesanan' => $pesanan->no_pesanan,
                 'nama_customer' => $pesanan->nama_customer,
                 'alamat' => $pesanan->alamat,
+                'no_hp' => $pesanan->no_hp,
                 'total' => $pesanan->total,
                 'tanggal' => $pesanan->tanggal,
                 'user_id' => $pesanan->user_id,
@@ -144,6 +147,7 @@ public function edit(string $id)
                 'no_pesanan' => $pesanan->no_pesanan,
                 'nama_customer' => $pesanan->nama_customer,
                 'alamat' => $pesanan->alamat,
+                'no_hp' => $pesanan->no_hp,
                 'total' => $pesanan->total,
                 'tanggal' => $pesanan->tanggal,
                 'user_id' => $pesanan->user_id,

@@ -76,11 +76,11 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Kategori::create([
-            'nama_kategori' => 'Coffie',
+            'nama_kategori' => 'Coffe',
         ]);
 
         Kategori::create([
-            'nama_kategori' => 'Non Coffie',
+            'nama_kategori' => 'Non Coffe',
         ]);
     }
 }

@@ -12,8 +12,10 @@ class Pesanan extends Model
     protected $dates = ['deleted_at'];
     protected $fillable = [
         'no_pesanan', 'alamat', 'metode_pembayaran', 'nama_customer',
-        'jumlah_pesanan', 'total', 'status_pesanan', 'produk_id', 'user_id'
+        'jumlah_pesanan', 'total', 'status_pesanan', 'produk_id', 'user_id',
+        'no_hp'
     ];
+    
 
     // Relasi ke model Produk
     public function produk()
