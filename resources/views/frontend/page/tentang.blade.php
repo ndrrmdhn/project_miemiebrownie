@@ -120,28 +120,37 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <!-- Client logos -->
-                    <div class="col-lg-2 col-md-4 col-sm-4 col-6">
-                        <a href="#" class="client__item"><img src="{{ asset('frontend/img/clients/nbm.jpg' )}}" alt="Partner"></a>
+                <div class="owl-carousel">
+                    <div class="client__item">
+                        <a href="#"><img src="{{ asset('frontend/img/clients/stifin.png') }}" alt="Partner"></a>
                     </div>
-                    <div class="col-lg-2 col-md-4 col-sm-4 col-6">
-                        <a href="#" class="client__item"><img src="{{ asset('frontend/img/clients/adap.jpg' )}}" alt="Partner"></a>
+                    <div class="client__item">
+                        <a href="#"><img src="{{ asset('frontend/img/clients/adap.jpg') }}" alt="Partner"></a>
                     </div>
-                    <div class="col-lg-2 col-md-4 col-sm-4 col-6">
-                        <a href="#" class="client__item"><img src="{{ asset('frontend/img/clients/coffe.jpg' )}}" alt="Partner"></a>
+                    <div class="client__item">
+                        <a href="#"><img src="{{ asset('frontend/img/clients/coffe.jpg') }}" alt="Partner"></a>
                     </div>
-                    <div class="col-lg-2 col-md-4 col-sm-4 col-6">
-                        <a href="#" class="client__item"><img src="{{ asset('frontend/img/clients/btg.jpg' )}}" alt="Partner"></a>
+                    <div class="client__item">
+                        <a href="#"><img src="{{ asset('frontend/img/clients/btg.jpg') }}" alt="Partner"></a>
                     </div>
-                    <div class="col-lg-2 col-md-4 col-sm-4 col-6">
-                        <a href="#" class="client__item"><img src="{{ asset('frontend/img/clients/umkm.jpeg' )}}" alt="Partner"></a>
+                    <div class="client__item">
+                        <a href="#"><img src="{{ asset('frontend/img/clients/umkm.jpeg') }}" alt="Partner"></a>
                     </div>
-                    <div class="col-lg-2 col-md-4 col-sm-4 col-6">
-                        <a href="#" class="client__item"><img src="{{ asset('frontend/img/clients/nbm.jpg' )}}" alt="Partner"></a>
+                    <div class="client__item">
+                        <a href="#"><img src="{{ asset('frontend/img/clients/nbm.jpg') }}" alt="Partner"></a>
+                    </div>
+                    <div class="client__item">
+                        <a href="#"><img src="{{ asset('frontend/img/clients/info_tegal.png') }}" alt="Partner"></a>
+                    </div>
+                    <div class="client__item">
+                        <a href="#"><img src="{{ asset('frontend/img/clients/masjid.png') }}" alt="Partner"></a>
                     </div>
                 </div>
             </div>
+        <!-- jQuery -->
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <!-- Owl Carousel JS -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
         </section>
     </div>
     <!-- Client Section End -->
