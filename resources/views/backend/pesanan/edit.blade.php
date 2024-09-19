@@ -20,6 +20,12 @@
                         <textarea class="form-control" id="alamat" name="alamat" rows="3" required>{{ $edit->alamat }}</textarea>
                     </div>
                     
+                    <!-- Tambahkan kolom input untuk nomor HP -->
+                    <div class="form-group">
+                        <label for="no_hp">Nomor HP</label>
+                        <input type="text" class="form-control" id="no_hp" name="no_hp" value="{{ $edit->no_hp }}" required>
+                    </div>
+
                     <div class="form-group">
                         <label for="status_pesanan">Status Pesanan</label>
                         <select class="form-control" id="status_pesanan" name="status_pesanan" required>

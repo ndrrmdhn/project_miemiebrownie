@@ -17,6 +17,7 @@ Schema::create('pesanan_batal', function (Blueprint $table) {
     $table->string('no_pesanan')->unique();
     $table->string('nama_customer');
     $table->text('alamat');
+    $table->string('no_hp');
     $table->decimal('total', 10, 2);
     $table->timestamp('tanggal');
     $table->unsignedBigInteger('user_id');

@@ -50,8 +50,8 @@ class PesananBackend extends Controller
         'produk_id' => 'required|exists:produk,id', 
         'jumlah_pesanan' => 'required|integer',
         'alamat' => 'required|string',
-        'no_hp' => 'required|string|max:15', // Hapus koma berlebih di sini
-        'metode_pembayaran' => 'required|in:bank_transfer,credit_card,cod',
+        'no_hp' => 'required|string|max:15',
+        'metode_pembayaran' => 'required|in:bank_transfer,credit_card,cod', // Perbaiki metode pembayaran
         'total_pesanan' => 'required|numeric',
     ]);
 
@@ -62,7 +62,7 @@ class PesananBackend extends Controller
 
     // Menyimpan data pesanan
     $validatedData['no_pesanan'] = $no_pesanan;
-    $validatedData['status_pesanan'] = $validatedData['status_pesanan'] ?? 'pending'; 
+    $validatedData['status_pesanan'] = $validatedData['status_pesanan'] ?? 'pending'; // Set status sebagai 'pending' jika tidak ada status yang diberikan
     $validatedData['user_id'] = auth()->user()->id;
     $validatedData['tanggal'] = Carbon::now();
 
@@ -241,4 +241,4 @@ public function destroyBatal($id)
 
     return redirect()->route('pesanan.batal')->with('error', 'Pesanan tidak ditemukan.');
 }
-}
+} 

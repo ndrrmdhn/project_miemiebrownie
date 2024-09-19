@@ -105,26 +105,26 @@ class CheckoutFrontend extends Controller
        })->implode("\n");
    
        $whatsappMessage = 
-           "==============================\n" .
-           "                    MIEMIE BROWNIE                    \n" .
-           "                      KOTA TEGAL                        \n" .
-           "==============================\n" .
-           "Nama Penerima : {$request->first_name} {$request->last_name}\n" .
-           "Alamat Penerima : {$request->address}\n" .
-           "No HP : {$request->phone}\n" .  // Menyertakan nomor HP dalam pesan
-           "Metode Pengiriman : - \n" . 
-           "-----------------------------------------------------------\n" .
-           "Detail Pesanan :\n" .
-           $productDetails . "\n" . 
-           "-----------------------------------------------------------\n" .
-           "Total Harga : Rp " . number_format($total, 0, ',', '.') . "\n" .
-           "Metode Pembayaran : {$request->payment_method}\n" .
-           "==============================\n";
-   
-       // Mengirim pesan ke WhatsApp
-       $whatsappNumber = '6289653600997';
-       $waLink = "https://wa.me/{$whatsappNumber}?text=" . urlencode($whatsappMessage);
-       return redirect($waLink);
-   }
+    "=========================\n" .
+    "        MIEMIE BROWNIE        \n" .  // Tambahkan spasi agar lebih ke tengah
+    " Every bake for your happiness \n" .
+    "=========================\n" .
+    "Nama: {$request->first_name} {$request->last_name}\n" .
+    "Alamat: {$request->address}\n" .
+    "No HP: {$request->phone}\n" .
+    "Metode Pengiriman: - \n" . 
+    "-------------------------\n" .
+    "Detail Pesanan:\n" .
+    $productDetails . "\n" . 
+    "-------------------------\n" .
+    "Total: Rp " . number_format($total, 0, ',', '.') . "\n" .
+    "Pembayaran: {$request->payment_method}\n" .
+    "=========================\n";
+
+$whatsappNumber = '6289653600997';
+$waLink = "https://wa.me/{$whatsappNumber}?text=" . urlencode($whatsappMessage);
+return redirect($waLink);
+
+    }
    
 }
