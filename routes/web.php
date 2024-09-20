@@ -9,6 +9,7 @@ use App\Http\Controllers\Backend\KategoriBackend;
 use App\Http\Controllers\Backend\BeritaBackend;
 use App\Http\Controllers\Backend\ProdukBackend;
 use App\Http\Controllers\Backend\PesananBackend;
+use App\Http\Controllers\Backend\KuponBackend;
 use App\Http\Middleware\IsAdmin;
 
 use App\Http\Controllers\Auth\CustomerAuth;
@@ -47,6 +48,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('backend/home', [HomeBackend::class, 'index'])->name('home');
     Route::resource('backend/customer', CustomerBackend::class);
     Route::resource('backend/kategori', KategoriBackend::class);
+    Route::resource('backend/diskon', KuponBackend::class);  
     Route::resource('backend/berita', BeritaBackend::class);
     Route::resource('backend/produk', ProdukBackend::class); 
     Route::resource('backend/pesanan', PesananBackend::class);
@@ -86,5 +88,7 @@ Route::get('/cart/keranjang', [KeranjangFrontend::class, 'index']);
 Route::post('/cart/add', [KeranjangFrontend::class, 'addToCart'])->name('cart.add');
 Route::post('/cart/keranjang/update', [KeranjangFrontend::class, 'updateCart']);
 Route::post('/cart/keranjang/delete', [KeranjangFrontend::class, 'removeItem']);
+Route::post('frontend/keranjang/applyKupon', [KeranjangFrontend::class, 'applyKupon'])->name('frontend.keranjang.applyKupon');
+
 Route::get('/checkout', [CheckoutFrontend::class, 'index'])->name('checkout');
 Route::post('/checkout/process', [CheckoutFrontend::class, 'process'])->name('checkout.process');

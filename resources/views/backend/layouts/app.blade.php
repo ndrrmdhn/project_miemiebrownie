@@ -34,6 +34,9 @@
                         <a href="{{ route('customer.index') }}">Customer</a>
                     </li>
                     <li>
+                        <a href="{{ route('diskon.index') }}">Kupon Diskon</a>
+                    </li>
+                    <li>
                         <a href="{{ route('berita.index') }}">Berita</a>
                     </li>
                     <li>
