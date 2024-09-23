@@ -4871,19 +4871,16 @@ h1 {
     position: fixed;
     width: 60px;
     height: 60px;
-    bottom: 20px;
+    bottom: 20px; /* Posisi WhatsApp */
     right: 20px;
-    background-color: #25D366;
+    background-color: #fff;
     border-radius: 50%;
-    color: #FFF;
     text-align: center;
     z-index: 100;
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: opacity 0.3s ease;
-    text-decoration: none;
 }
 
 .whatsapp-float img {
@@ -4897,7 +4894,7 @@ h1 {
 
 .cta-text {
     position: fixed;
-    bottom: 90px;
+    bottom: 90px; /* Jarak dari bawah */
     right: 20px;
     background-color: #ffffff;
     color: #000000;
@@ -4915,4 +4912,25 @@ h1 {
 .cta-text.hidden {
     opacity: 0;
     visibility: hidden;
+}
+
+/* Floating Cart Style */
+.cart-icon {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 90px;
+    right: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.cart-icon img {
+    width: 70%;
+    height: auto;
 }

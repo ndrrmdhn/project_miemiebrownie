@@ -54,7 +54,7 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="continue__btn">
-                            <a href="/page/produk">Lanjut Belanja</a>
+                            <a href="/page/produk">Tambah Produk</a>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6">
@@ -63,6 +63,7 @@
                         </div>
                     </div>
                 </div>
+                <br>
             </div>
             <div class="col-lg-4">
                 <div class="cart__total">
@@ -70,12 +71,35 @@
                     <ul>
                         <li>Total <span id="cart-total">Rp {{ number_format($cartTotal, 0, ',', '.') }}</span></li>
                     </ul>
-                    <a href="{{ route('checkout') }}"class="primary-btn">Proceed to checkout</a>
+                    <a href="{{ route('checkout') }}"class="primary-btn">Checkout</a>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<style>
+    .continue__btn.update__btn {
+	text-align: right;
+}
+
+.continue__btn.update__btn a {
+	color: #ffffff;
+	background: #111111;
+	border-color: #111111;
+}
+
+.continue__btn.update__btn a i {
+	margin-right: 5px;
+}
+
+.continue__btn a {
+    font-size: 14px !important;
+    padding: 8px 20px !important;
+    display: block !important;
+    width: auto !important;
+}
+</style>
 
 <script src="{{ asset('frontend/js/app-cart.js') }}" defer></script>
 @endsection

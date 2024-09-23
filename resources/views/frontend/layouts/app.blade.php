@@ -3,8 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Male_Fashion Template">
-    <meta name="keywords" content="Male_Fashion, unica, creative, html">
+    <meta name="description" content="Miemie Coffee & Brownies menawarkan berbagai oleh-oleh khas Tegal, mulai dari brownies, bolen, kue ulang tahun, hingga hampers spesial. Temukan dessert lezat dan cookies premium di coffee shop kami yang hits di Tegal. Explore oleh-oleh kekinian dan nikmati momen spesial dengan Miemie Brownie yang viral dan enak!">
+    <meta name="keywords" content="Oleh-oleh Tegal, brownies enak, bolen kekinian, kue ulang tahun, cake premium, dessert lezat, cookies, coffee shop Tegal, Miemie Coffee, hampers kue, oleh-oleh kekinian, kue hits Tegal, explore Tegal, info Tegal, Miemie Brownie, bingkisan, hadiah spesial, viral, kue enak">
+    <link rel="icon" href="{{ asset('frontend/img/image-title.jpg') }}" type="image/jpg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -37,17 +38,17 @@
         <div class="offcanvas__option">
             <div class="offcanvas__links">
                 <a href="/cart/keranjang">
-                    <i class="fa fa-shopping-cart" style="color: #3E2723;"></i>
+                    <i class="fa fa-shopping-cart fa-lg" style="color: #3E2723;"></i>
                     @if(Auth::guard('customer')->check())
                         <span class="badge badge-danger">{{ $totalQuantity }}</span>
                     @endif
                 </a>
                 @if(Auth::guard('customer')->check())
-                    <a href="{{ route('customerdetail.index') }}"><i class="fa fa-user" style="color: #3E2723;"></i></a>
+                    <a href="{{ route('customerdetail.index') }}"><i class="fa fa-user fa-lg" style="color: #3E2723;"></i></a>
                     <form action="{{ route('customer.logout') }}" method="POST" style="display:inline;">
                         @csrf
                         <button type="submit" class="btn btn-link" style="padding: 0; color: #3E2723; text-decoration: none;">
-                            <i class="fa fa-sign-out-alt"></i>
+                            <i class="fa fa-sign-out-alt fa-lg"></i>
                         </button>
                     </form>
                 @else
@@ -57,7 +58,7 @@
         </div>
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__text">
-            <p>Miemie Brownie & Miemie Coffe</p>
+            <p>Miemie Brownie & Miemie Coffee</p>
         </div>
     </div>
     <!-- Offcanvas Menu End -->
@@ -118,11 +119,18 @@
             <!-- Main Content End -->
         </div>
     </div>
+
+    <!-- Shopping Cart Icon (hidden initially) -->
+    <a href="/cart/keranjang" id="cart-icon" class="cart-icon">
+        <i class="fa fa-shopping-cart fa-2x" style="color: #FF4DA3;"></i>
+        @if(Auth::guard('customer')->check())
+        @endif
+    </a>
     
-    <!-- CTA Text -->
+    {{-- <!-- CTA Text -->
     <div id="cta-text" class="cta-text">
         Ingin Pesan Sekarang? <br> Hubungi Kami via WhatsApp!
-    </div>
+    </div> --}}
 
     <!-- WhatsApp Button -->
     <a href="https://api.whatsapp.com/send/?phone=628152800800&text=Hallo+miemiebrownie.com.+Saya+mau+pesan+%3A&type=phone_number&app_absent=0" class="whatsapp-float" target="_blank">

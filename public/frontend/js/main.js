@@ -403,7 +403,14 @@ $(document).ready(function(){
             }
         }
     });
+
+    $(document).ready(function(){
+        var isLoggedIn = true; 
+        
+        // Jika pengguna login, tampilkan ikon keranjang
+        if (isLoggedIn) {
+            $('#cart-icon').fadeIn(); 
+        }
+    });
 });
-
-
 

@@ -84,7 +84,7 @@
                                 <form action="{{ route('cart.add') }}" method="POST" class="add-to-cart-form">
                                     @csrf
                                     <input type="hidden" name="product_id" value="{{ $product->id }}">
-                                    <button type="submit" class="add-cart product-page-cart"> + Tambah Keranjang</button> 
+                                    <button type="submit" class="add-cart product-page-cart">Tambah Keranjang</button> 
                                 </form>
                                 <h5>Rp {{ number_format($product->harga, 0, ',', '.') }}</h5>
                             </div>
@@ -97,4 +97,20 @@
     </div>
 </section>
 </body>
+
+<style>
+    @media (max-width: 576px) { 
+    .product__item__text h6 {
+        font-size: 0.8rem; 
+    }
+
+    .product__item__text h5 {
+        font-size: 0.8rem; 
+    }
+
+    .add-cart {
+        font-size: 0.6rem; 
+    }
+}
+</style>
 @endsection
