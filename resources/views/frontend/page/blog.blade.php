@@ -33,5 +33,41 @@
         </div>
     </section>
     <!-- Blog Section End -->
+
+    <style>
+    @media (max-width: 576px) { 
+        .blog__item__text h5 {
+            color: #0d0d0d;
+            font-weight: 700;
+            font-size: 0.9rem;
+            line-height: 28px;
+            margin-bottom: 10px;
+        }
+
+        .blog__item__text a {
+            display: inline-block;
+            color: #111111;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            padding: 3px 0;
+            position: relative;
+        }
+
+        .blog__item__text a:after {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background: #111111;
+            content: "";
+            -webkit-transition: all, 0.3s;
+            -o-transition: all, 0.3s;
+            transition: all, 0.3s;
+        }
+    }
+    </style>
 </body>
 @endsection

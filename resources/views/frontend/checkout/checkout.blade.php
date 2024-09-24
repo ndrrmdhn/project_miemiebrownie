@@ -46,6 +46,7 @@
                             <label for="email">Email<span class="text-danger">*</span></label>
                             <input type="email" id="email" name="email" class="form-control" value="{{ $customer->email }}" disabled>
                         </div>
+
                         <div class="col-md-12 mb-3">
                             <label for="order_notes">Catatan Pesanan</label>
                             <textarea id="order_notes" name="order_notes" class="form-control" rows="3" placeholder="Catatan khusus untuk pesanan Anda."></textarea>

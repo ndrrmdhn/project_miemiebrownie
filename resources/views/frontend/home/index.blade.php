@@ -80,7 +80,7 @@
                                     <form action="{{ route('cart.add') }}" method="POST" class="add-to-cart-form">
                                         @csrf
                                         <input type="hidden" name="product_id" value="{{ $product->id }}">
-                                        <button type="submit" class="add-cart product-page-cart"> + Tambah Keranjang</button> 
+                                        <button type="submit" class="add-cart product-page-cart">Tambah Keranjang</button> 
                                     </form>
                                     <h5>Rp {{ number_format($product->harga, 0, ',', '.') }}</h5>
                                 </div>
@@ -120,5 +120,53 @@
             </div>
         </section>
         <!-- Blog Section End -->
+        
+    <style>
+    @media (max-width: 576px) { 
+        .product__item__text h6 {
+            font-size: 0.8rem; 
+        }
+    
+        .product__item__text h5 {
+            font-size: 0.8rem; 
+        }
+    
+        .add-cart {
+            font-size: 0.7rem; 
+        }
+
+        .blog__item__text h5 {
+            color: #0d0d0d;
+            font-weight: 700;
+            font-size: 1rem;
+            line-height: 28px;
+            margin-bottom: 10px;
+        }
+
+        .blog__item__text a {
+            display: inline-block;
+            color: #111111;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            padding: 3px 0;
+            position: relative;
+        }
+
+        .blog__item__text a:after {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background: #111111;
+            content: "";
+            -webkit-transition: all, 0.3s;
+            -o-transition: all, 0.3s;
+            transition: all, 0.3s;
+        }
+    }
+    </style>
 </body>
 @endsection

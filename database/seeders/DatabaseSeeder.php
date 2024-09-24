@@ -21,20 +21,20 @@ class DatabaseSeeder extends Seeder
         );
         
         User::updateOrCreate(
-            ['email' => 'ramasahid@gmail.com'],
+            ['email' => 'ramasahidramadhan@gmail.com'],
             [
                 'nama' => 'Rama Sahid',
                 'is_admin' => 1,
-                'password' => bcrypt('P@55word'),
+                'password' => bcrypt('08164222922'),
             ]
         );
         
         User::updateOrCreate(
-            ['email' => 'teammiemie-brownie@gmail.com'],
+            ['email' => 'miemiebrownieofficial@gmail.com'],
             [
                 'nama' => 'Team Miemie Brownie',
                 'is_admin' => 0,
-                'password' => bcrypt('P@55word'),
+                'password' => bcrypt('ayosedekah'),
             ]
         );
         
@@ -48,7 +48,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Kategori::create([
-            'nama_kategori' => 'Kaya Kue Cake',
+            'nama_kategori' => 'Kayakue Cake',
         ]);
 
         Kategori::create([
@@ -64,7 +64,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Kategori::create([
-            'nama_kategori' => 'Spesial Moment',
+            'nama_kategori' => 'Special Moment',
         ]);
 
         Kategori::create([
@@ -81,6 +81,10 @@ class DatabaseSeeder extends Seeder
 
         Kategori::create([
             'nama_kategori' => 'Non Coffe',
+        ]);
+
+        Kategori::create([
+            'nama_kategori' => 'Main Course',
         ]);
     }
 }

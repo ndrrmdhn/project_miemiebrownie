@@ -268,6 +268,7 @@
         <div class="row mb-4">
             <div class="col-12 text-center animate__animated animate__fadeInUp">
                 <h4 class="text-black font-weight-bold">Hubungi Kami</h4>
+                <span>Email: miemiebrownieofficial@gmail.com</span>
                 <div class="underline bg-pink mx-auto"></div>
             </div>
         </div>

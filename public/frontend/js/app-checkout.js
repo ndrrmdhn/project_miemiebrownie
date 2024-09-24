@@ -1,4 +1,3 @@
-
 document.getElementById('apply-coupon-form').addEventListener('submit', function (e) {
   e.preventDefault();
 

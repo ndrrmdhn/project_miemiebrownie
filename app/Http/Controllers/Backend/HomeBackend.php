@@ -20,11 +20,8 @@ class HomeBackend extends Controller
         $jumlahPesananProses = Pesanan::where('status_pesanan', 'proses')->count();
         $jumlahPesananSelesai = Pesanan::where('status_pesanan', 'selesai')->count();
         $jumlahPesananBatal = Pesanan::where('status_pesanan', 'batal')->count();
-
         $jumlahProduk = Produk::count();
-
         $jumlahPengunjung = Pengunjung::count();
-
 
         return view('backend.home.index', [
             'judul' => 'Beranda',
