@@ -65,21 +65,15 @@
                 </div>
             </div>
             <div class="col-lg-4">
-                <div class="cart__discount">
-                    <h6>Pakai Kode, Lebih Hemat!</h6>
-                    <form action="#">
-                        <input type="text" placeholder="Kode Promo">
-                        <button type="submit">Klaim!</button>
-                    </form>
-                </div>
                 <div class="cart__total">
                     <h6>Total Keranjang</h6>
                     <ul>
                         <li>Total <span id="cart-total">Rp {{ number_format($cartTotal, 0, ',', '.') }}</span></li>
                     </ul>
-                    <a href="{{ route('checkout') }}"class="primary-btn">Proceed to checkout</a>
+                    <a href="{{ route('checkout') }}" class="primary-btn">Proceed to checkout</a>
                 </div>
             </div>
+            
         </div>
     </div>
 </section>

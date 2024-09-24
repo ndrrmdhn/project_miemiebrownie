@@ -75,12 +75,12 @@
               </div>
               <div class="input-box">
                 <i class="fas fa-lock"></i>
-                <input type="password" name="password" placeholder="Enter your password" required>
-              </div>
+                <input type="password" name="password" placeholder="Password (minimal 8 karakter)" required>
+              </div>                           
               <div class="input-box">
                 <i class="fas fa-lock"></i>
-                <input type="password" name="password_confirmation" placeholder="Confirm your password" required>
-              </div>
+                <input type="password" name="password" placeholder="Password (minimal 8 karakter)" required>
+              </div>       
               <div class="button input-box">
                 <input type="submit" value="Submit">
               </div>

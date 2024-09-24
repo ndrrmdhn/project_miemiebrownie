@@ -88,7 +88,7 @@ Route::get('/cart/keranjang', [KeranjangFrontend::class, 'index']);
 Route::post('/cart/add', [KeranjangFrontend::class, 'addToCart'])->name('cart.add');
 Route::post('/cart/keranjang/update', [KeranjangFrontend::class, 'updateCart']);
 Route::post('/cart/keranjang/delete', [KeranjangFrontend::class, 'removeItem']);
-Route::post('frontend/keranjang/applyKupon', [KeranjangFrontend::class, 'applyKupon'])->name('frontend.keranjang.applyKupon');
 
 Route::get('/checkout', [CheckoutFrontend::class, 'index'])->name('checkout');
 Route::post('/checkout/process', [CheckoutFrontend::class, 'process'])->name('checkout.process');
+Route::post('/checkout/apply-coupon', [CheckoutFrontend::class, 'applyCoupon'])->name('checkout.apply-coupon');

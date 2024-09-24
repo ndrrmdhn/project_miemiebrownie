@@ -1,3 +1,4 @@
+
 console.log("app-cart.js is loaded");
 
 $(document).on('click', '#update-cart', function (e) {
@@ -63,3 +64,4 @@ $(document).on('click', '#update-cart', function (e) {
             }
         });
     });
+    
