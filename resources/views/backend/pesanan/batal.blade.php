@@ -45,11 +45,8 @@
                                         @case('bank_transfer')
                                             <span>Transfer Bank</span>
                                             @break
-                                        @case('credit_card')
-                                            <span>Kartu Kredit</span>
-                                            @break
-                                        @case('cod')
-                                            <span>Bayar di Tempat (COD)</span>
+                                      @case('qris')
+                                            <span>Qris</span>
                                             @break
                                         @default
                                             <span>Belum Bayar</span>

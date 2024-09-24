@@ -34,8 +34,7 @@
                         <select class="form-control" id="metode_pembayaran" name="metode_pembayaran" required>
                             <option value="">Pilih Metode Pembayaran</option>
                             <option value="bank_transfer">Transfer Bank</option>
-                            <option value="credit_card">Kartu Kredit</option>
-                            <option value="cod">COD</option>
+                            <option value="qris">Qris</option>
                         </select>
                     </div>
                     <div class="form-group">

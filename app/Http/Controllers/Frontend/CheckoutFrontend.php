@@ -165,7 +165,7 @@ public function process(Request $request)
     "=========================\n";
 
     // Redirect ke WhatsApp dengan pesan
-    $whatsappNumber = '6289653600997';
+    $whatsappNumber = '628152800800';
     $waLink = "https://wa.me/{$whatsappNumber}?text=" . urlencode($whatsappMessage);
     return redirect($waLink);
 }

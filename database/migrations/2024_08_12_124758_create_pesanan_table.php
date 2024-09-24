@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('no_pesanan')->unique();
             $table->text('alamat');
             $table->string('no_hp');
-            $table->enum('metode_pembayaran', ['bank_transfer', 'credit_card', 'cod']);
+            $table->enum('metode_pembayaran', ['bank_transfer', 'QRIS']);
             $table->string('nama_customer');
             $table->decimal('total', 15, 2); // Total seluruh pesanan
             $table->string('status_kode')->nullable();
@@ -25,7 +25,7 @@ return new class extends Migration
             $table->enum('status_pesanan', ['pending', 'proses', 'selesai', 'batal']);
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
-        
+            
             // Relasi foreign key
             $table->foreign('user_id')->references('id')->on('user')->onDelete('cascade');
         });        

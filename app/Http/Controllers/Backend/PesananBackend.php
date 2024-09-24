@@ -51,7 +51,7 @@ class PesananBackend extends Controller
         'jumlah_pesanan' => 'required|integer',
         'alamat' => 'required|string',
         'no_hp' => 'required|string|max:15',
-        'metode_pembayaran' => 'required|in:bank_transfer,credit_card,cod', // Perbaiki metode pembayaran
+        'metode_pembayaran' => 'required|in:bank_transfer,qris', // Perbaiki metode pembayaran
         'total_pesanan' => 'required|numeric',
     ]);
 
