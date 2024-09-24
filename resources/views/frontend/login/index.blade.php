@@ -75,12 +75,12 @@
               </div>
               <div class="input-box">
                 <i class="fas fa-lock"></i>
-                <input type="password" name="password" placeholder="Password (minimal 8 karakter)" required>
-              </div>                           
+                <input type="password" name="password" placeholder="Buat kata sandi (minimal 8 karakter)" minlength="8" required>
+              </div>
               <div class="input-box">
                 <i class="fas fa-lock"></i>
-                <input type="password" name="password" placeholder="Password (minimal 8 karakter)" required>
-              </div>       
+                <input type="password" name="password_confirmation" placeholder="Konfirmasi kata sandi Anda" required>
+              </div>
               <div class="button input-box">
                 <input type="submit" value="Kirim">
               </div>
