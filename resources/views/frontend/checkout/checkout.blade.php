@@ -52,6 +52,13 @@
                             <textarea id="order_notes" name="order_notes" class="form-control" rows="3" placeholder="Catatan khusus untuk pesanan Anda."></textarea>
                         </div>
                         <div class="col-md-12 mb-3">
+                            <label for="metode_pengiriman" class="form-label">Metode Pengiriman <span class="text-danger">*</span></label><br>
+                            <select name="metode_pengiriman" id="metode_pengiriman" class="form-select" required>
+                                <option value="diambil">Diambil</option>
+                                <option value="dikirim">Dikirim</option>
+                            </select>
+                        </div>
+                        <div class="col-md-12 mb-3">
                             <label for="payment_method" class="form-label">Metode Pembayaran <span class="text-danger">*</span></label><br>
                             <select id="payment_method" name="payment_method" class="form-select" required>
                                 <option value="" disabled>Pilih Metode Pembayaran</option>

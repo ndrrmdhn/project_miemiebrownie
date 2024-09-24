@@ -17,6 +17,7 @@ return new class extends Migration
             $table->text('alamat');
             $table->string('no_hp');
             $table->enum('metode_pembayaran', ['bank_transfer', 'QRIS']);
+            $table->enum('metode_pengiriman', ['diambil', 'dikirim']); 
             $table->string('nama_customer');
             $table->decimal('total', 15, 2); // Total seluruh pesanan
             $table->string('status_kode')->nullable();

@@ -51,48 +51,44 @@ class PesananBackend extends Controller
         'jumlah_pesanan' => 'required|integer',
         'alamat' => 'required|string',
         'no_hp' => 'required|string|max:15',
-        'metode_pembayaran' => 'required|in:bank_transfer,qris', // Perbaiki metode pembayaran
+        'metode_pembayaran' => 'required|in:bank_transfer,qris', 
+        'metode_pengiriman' => 'required|string', // Tambahkan validasi untuk metode pengiriman
         'total_pesanan' => 'required|numeric',
     ]);
 
-    // Menghasilkan nomor pesanan dengan format tanggal-angka_acak
+    // Generate pesanan number
     $tanggal = Carbon::now()->format('Ymd');
     $angka_acak = Str::upper(Str::random(8));
     $no_pesanan = "{$tanggal}{$angka_acak}";
 
-    // Menyimpan data pesanan
+    // Store pesanan
     $validatedData['no_pesanan'] = $no_pesanan;
-    $validatedData['status_pesanan'] = $validatedData['status_pesanan'] ?? 'pending'; // Set status sebagai 'pending' jika tidak ada status yang diberikan
+    $validatedData['status_pesanan'] = 'pending';
     $validatedData['user_id'] = auth()->user()->id;
     $validatedData['tanggal'] = Carbon::now();
+    $validatedData['metode_pembayaran'] = $request->metode_pembayaran;
 
-    // Buat pesanan
     $pesanan = Pesanan::create($validatedData);
 
-    // Ambil data cart dari session atau database
+    // Process cart items
     $cartItems = auth('customer')->user()->cartItems;
-
-    // Proses setiap item di dalam keranjang belanja
     foreach ($cartItems as $item) {
         if ($item->product && $item->product->harga !== null) {
-            // Simpan detail produk dari keranjang
             $pesanan->items()->create([
                 'produk_id' => $item->product_id,
                 'jumlah_pesanan' => $item->quantity,
                 'harga' => $item->product->harga,
                 'total' => $item->product->harga * $item->quantity,
             ]);
-        } else {
-            Log::error('Produk tidak valid atau harga produk adalah null', ['product_id' => $item->product_id]);
         }
     }
 
-    // Hapus keranjang setelah pesanan berhasil diproses
+    // Clear cart
     auth('customer')->user()->cartItems()->delete();
 
-    // Redirect ke halaman pesanan dengan pesan sukses
     return redirect()->route('pesanan.index')->with('success', 'Pesanan berhasil dibuat.');
 }
+
 
 public function edit(string $id)
 {

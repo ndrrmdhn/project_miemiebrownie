@@ -22,6 +22,7 @@
                             <th>No HP</th>
                             <th>Produk</th>
                             <th>Total</th>
+                            <th>Metode Pengiriman</th>
                             <th>Metode Pembayaran</th>
                             <th>Aksi</th>
                         </tr>
@@ -62,17 +63,17 @@
                                 </td>
                                 <td>Rp. {{ number_format($row->total, 0, ',', '.') }}</td>
                                 <td>
-                                    @switch($row->metode_pembayaran)
-                                        @case('bank_transfer')
-                                            <span>Transfer Bank</span>
-                                            @break
-                                        @case('qris')
-                                            <span>Qris</span>
-                                            @break
-                                        @default
-                                            <span>Belum Bayar</span>
-                                    @endswitch
-                                </td>                                
+                                    {{ $row->metode_pengiriman }}
+                                </td>
+                                <td>
+                                    @if($row->metode_pembayaran === 'bank_transfer')
+                                        <span>Transfer Bank</span>
+                                    @elseif($row->metode_pembayaran === 'qris')
+                                        <span>Qris</span>
+                                    @else
+                                        <span>Tidak Diketahui</span>
+                                    @endif
+                                </td>                                                                                 
                                 <td align="center">
                                     <a href="{{ route('pesanan.edit', $row->id) }}" title="Ubah Data" class="btn btn-success btn-xs">
                                         <i class="fa fa-edit"></i> Ubah

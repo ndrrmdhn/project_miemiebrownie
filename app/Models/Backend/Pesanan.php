@@ -13,7 +13,7 @@ class Pesanan extends Model
     protected $fillable = [
         'no_pesanan', 'alamat', 'metode_pembayaran', 'nama_customer',
         'jumlah_pesanan', 'total', 'status_pesanan', 'produk_id', 'user_id',
-        'no_hp'
+        'no_hp', 'metode_pengiriman'
     ];
     
 
