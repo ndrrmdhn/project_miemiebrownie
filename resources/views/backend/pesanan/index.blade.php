@@ -68,10 +68,8 @@
                                 <td>
                                     @if($row->metode_pembayaran === 'bank_transfer')
                                         <span>Transfer Bank</span>
-                                    @elseif($row->metode_pembayaran === 'qris')
-                                        <span>Qris</span>
                                     @else
-                                        <span>Tidak Diketahui</span>
+                                        <span>Qris</span>
                                     @endif
                                 </td>                                                                                 
                                 <td align="center">
